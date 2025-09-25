@@ -7,7 +7,7 @@ import faisal from "@/assets/image/faisal.png"
 import Image from "next/image";
 import SocialMedia from "@/components/container/socialMedia";
 
-export default function Projects() {
+export default function Contact() {
   const theme = choosenTheme;
   return (
     <div

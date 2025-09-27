@@ -3,7 +3,7 @@ import { choosenTheme } from "../util/theme";
 import { easeInOut, motion } from "motion/react";
 import { SquareArrowOutDownRight } from "lucide-react";
 import Link from "next/link";
-import type { CProjProps } from "@/types/them_prop";
+import type { CProjProps } from "@/types/prop_type";
 interface CardProjectProps{
   props:CProjProps
 }

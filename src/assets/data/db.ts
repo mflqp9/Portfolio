@@ -11,15 +11,15 @@ import {
   faInstagram,
 
 } from "@fortawesome/free-brands-svg-icons";
-
+import {House,GraduationCap,BookMarked,FolderOpenDot,Contact } from "lucide-react";
 
 // Navbar Items
 const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/education", label: "Education" },
-    { href: "/experience", label: "Experience" },
-    { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" }
+    { href: "/", label: "Home",icon:House },
+    { href: "/education", label: "Education",icon:GraduationCap },
+    { href: "/experience", label: "Experience",icon:BookMarked },
+    { href: "/projects", label: "Projects",icon:FolderOpenDot },
+    { href: "/contact", label: "Contact",icon:Contact }
 ];
 
 const navFooter = [

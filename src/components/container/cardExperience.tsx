@@ -1,4 +1,4 @@
-import type { InstituteProps } from "@/types/them_prop";
+import type { InstituteProps } from "@/types/prop_type";
 import React from "react";
 import { choosenTheme } from "../util/theme";
 import { easeInOut, motion } from "motion/react";

@@ -9,22 +9,7 @@ import ManOnTable from "../svg/manOnTable";
 import SocialMedia from "@/components/container/socialMedia";
 import RotatingText from "@/components/container/rotateText";
 import { motion } from "motion/react";
-import type { Theme } from "@/types/them_prop";
-import Link from "next/link";
-
-// type Theme = {
-//   body: string;
-//   text: string;
-//   expTxtColor: string;
-//   highlight: string;
-//   dark: string;
-//   secondaryText: string;
-//   imageHighlight: string;
-//   compImgHighlight: string;
-//   jacketColor: string;
-//   headerColor: string;
-//   splashBg: string;
-// };
+import type { Theme } from "@/types/prop_type";
 
 interface HeroSectionProps {
   theme: Theme;
@@ -56,7 +41,7 @@ export default function HeroSection({ theme }: HeroSectionProps) {
             </h1>
             <div className="flex justify-start">
               <RotatingText
-                texts={["Web", "Desktop", "Web", "Desktop"]}
+                texts={[ "Web", "Desktop"]}
                 mainClassName="font-semibold font-work-sans text-lg sm:mt-1 md:mt-2 px-2 sm:px-3 block bg-cyan-300 w-[100px] h-[28px] md:h-[30px] lg:h-[35px] justify-center  text-black overflow-hidden py-0.5 sm:py-1 rounded-lg"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
@@ -67,7 +52,20 @@ export default function HeroSection({ theme }: HeroSectionProps) {
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={2000}
               />
-
+              
+              {/* <RotatingText
+                texts={["Web","Desktop","web","Desktop"]}
+                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2000}
+                /> */}
+              
               <h1
                 style={{ color: theme.jacketColor }}
                 className=" text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2"

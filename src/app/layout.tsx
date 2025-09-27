@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono,Roboto,Work_Sans } from "next/font/google";
 import "./globals.css"
 import Footer from "@/components/footer/footer";
-import { Navbar } from "@/components/navbar";
+import  Navbar  from "@/components/navbar/navbar";
 import { choosenTheme } from "@/components/util/theme";
-import mflogo from "@/assets/image/mflogo.png"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

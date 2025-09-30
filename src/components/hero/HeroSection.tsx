@@ -18,10 +18,10 @@ interface HeroSectionProps {
 export default function HeroSection({ theme }: HeroSectionProps) {
   return (
     <div
-      style={{ backgroundColor: theme.body }}
+      // style={{ backgroundColor: theme.body }}
       className="min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden"
     >
-      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
+      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-6 lg:px-12 py-8 lg:py-0">
         {/* Left Content */}
         <motion.div
           className="my-auto w-full"
@@ -29,17 +29,18 @@ export default function HeroSection({ theme }: HeroSectionProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
-          <GreetTitle width={200} className="mb-2" />
-
+          <div className="flex justify-center md:justify-start items-center">
+          <GreetTitle width={200}  />
+          </div>
           {/* Headline */}
-          <div className="mt-6 w-full grid flex-wrap items-center text-center sm:text-left justify-center sm:justify-start">
+          <div className=" w-full grid flex-wrap justify-center md:justify-start items-center text-center sm:text-left">
             <h1
               style={{ color: theme.jacketColor }}
-              className=" text-[18px] sm:text-2xl md:text-[26px] lg:text-[32px] xl:text-4xl font-poppins font-bold tracking-tight pr-6"
-            >
+              className=" text-[18px] sm:text-2xl md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight"
+              >
               Building Modern & Responsive
             </h1>
-            <div className="flex justify-start">
+            <div className=" flex justify-center">
               <RotatingText
                 texts={[ "Web", "Desktop"]}
                 mainClassName="font-semibold font-work-sans text-lg sm:mt-1 md:mt-2 px-2 sm:px-3 block bg-cyan-300 w-[100px] h-[28px] md:h-[30px] lg:h-[35px] justify-center  text-black overflow-hidden py-0.5 sm:py-1 rounded-lg"
@@ -53,19 +54,6 @@ export default function HeroSection({ theme }: HeroSectionProps) {
                 rotationInterval={2000}
               />
               
-              {/* <RotatingText
-                texts={["Web","Desktop","web","Desktop"]}
-                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                staggerFrom={"last"}
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={2000}
-                /> */}
-              
               <h1
                 style={{ color: theme.jacketColor }}
                 className=" text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2"
@@ -76,15 +64,18 @@ export default function HeroSection({ theme }: HeroSectionProps) {
           </div>
 
           {/* Subtitle */}
+          <div className="flex justify-center">
+
           <p
             style={{ color: choosenTheme.secondaryText }}
-            className="mt-3 max-w-[60ch] text-sm sm:text-base md:text-lg font-semibold font-roboto text-center sm:text-left px-2"
-          >
+            className="mt-3 max-w-[60ch] text-sm sm:text-base md:text-lg font-semibold font-roboto text-center px-2"
+            >
             {greeting.subTitle}
           </p>
+            </div>
 
           {/* Social + Button */}
-          <div className="mt-4 flex flex-col sm:flex-row items-center sm:items-start gap-4">
+          <div className="mt-4 flex flex-col justify-center sm:flex-row items-center sm:items-start gap-4">
             <SocialMedia className="pt-2" />
             <Button size="lg" className="rounded-full text-sm sm:text-base">
               <a

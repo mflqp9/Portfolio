@@ -13,6 +13,7 @@ export default function ProjectsImg() {
         width="800.79"
         height="600.8"
         viewBox="0 0 1103.79 707.8"
+        className={`w-[600px] h-[350px] md:w-[800px] md:h-[580px]`}
       >
         <defs>
           <linearGradient

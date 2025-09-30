@@ -34,11 +34,11 @@ export default function Education() {
         >
           {/* Headline */}
 
-          <div className="  mt-[-5rem] w-full grid flex-wrap items-center text-center justify-center">
+          <div className="mt-[-5rem] w-full grid flex-wrap items-center text-center justify-center">
             <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
               Education
             </h1>
-            <div className="flex justify-start">
+            <div className="flex justify-center">
               <h1 style={{color:theme.jacketColor}} className="ml-5 text-[18px] xl:text-2xl font-work-sans tracking-tight pl-2">
                 {education.degree} - {education.passing_year}
               </h1>
@@ -57,12 +57,12 @@ export default function Education() {
       <div className="w-full grid justify-center gap-2.5">
         <div className="w-full flex justify-center items-center mb-5">
           <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
-            Certificate
+            Certificates
           </h1>
         </div>
         <div className="w-full flex justify-center flex-2 flex-wrap gap-5">
           {education.certications.map((cert,i) => (
-            <TestimonialCard key={i} props={cert} />
+            <TestimonialCard key={i} props={cert}/>
           ))}
         </div>
       </div>

@@ -14,7 +14,7 @@ export function CardExperience({ props }: CardProps) {
       transition={{ duration: 0.1, ease: easeInOut }}
       whileHover={{ scale: 0.98 }}
       whileTap={{ scale: 0.96 }}
-      className="max-w-[60%] min-h-34 rounded-2xl flex gap-1 border border-gray-100 shadow-[0_0_15px_3px_rgba(0,0,0,0.20)]"
+      className="max-w-[100%] md:max-w-[60%] min-h-34 mx-3 rounded-2xl flex gap-1 border border-gray-100 shadow-[0_0_15px_3px_rgba(0,0,0,0.20)]"
     >
       {/* Header */}
       <div className=" min-h-34  w-[30%] bg-gray-200 rounded-tl-2xl rounded-bl-2xl flex justify-center-safe items-center">

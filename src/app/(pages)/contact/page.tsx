@@ -5,34 +5,33 @@ import { motion } from "motion/react";
 import { CardContact } from "@/components/container/cardContact";
 import faisal from "@/assets/image/faisal.png"
 import Image from "next/image";
-import SocialMedia from "@/components/container/socialMedia";
 
 export default function Contact() {
   const theme = choosenTheme;
   return (
     <div
       style={{ backgroundColor: theme.body }}
-      className="min-h-[calc(100vh-5rem)] grid items-center  justify-center overflow-hidden scroll-smooth"
+      className="min-h-[calc(100vh-15rem)] grid items-center  justify-center scroll-smooth overflow-hidden"
     >
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
 
         {/* Right Text Content */}
         <motion.div
-          className="my-20 w-full"
+          className="my-5 w-full grid justify-center"
           initial={{ opacity: 0, x: -200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
           {/* Headline */}
 
-          <div className=" w-full grid flex-wrap items-center text-center justify-center">
-            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
+          <div className="w-full grid flex-wrap items-center text-center justify-center">
+            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
               Contact Me
             </h1>
 
             <p
               style={{ color: choosenTheme.secondaryText }}
-              className="ml-10 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left px-2"
+              className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center p-2"
             >
               I’m available on almost every social platform — just drop me a message, and I’ll get back to you within 24 hours! I love helping with React, Next.js, MERN Stack, MySQL, and Open-Source Development.
             </p>
@@ -40,7 +39,7 @@ export default function Contact() {
           
             <CardContact />
     
-          <SocialMedia className="mt-5"/>
+          {/* <SocialMedia className="mt-5"/> */}
         </motion.div>
         {/* Left Content (Image / Illustration) */}
         <motion.div

@@ -10,8 +10,9 @@ export default function EducationImg() {
         xmlns="http://www.w3.org/2000/svg"
         // xmlns:xlink="http://www.w3.org/1999/xlink"
         width="800"//"795.39431"
-        height="580"//"574.03802"
+        height="480"//"574.03802"
         viewBox="0 0 795.39431 574.03802"
+        className={`w-[600px] h-[350px] md:w-[800px] md:h-[580px]`}
       >
         <defs>
           <linearGradient

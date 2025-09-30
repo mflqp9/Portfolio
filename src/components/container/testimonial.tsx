@@ -16,7 +16,7 @@ interface CardProps {
 
 const TestimonialCard = ({ props }:CardProps) => {
   return (
-    <Card className="relative w-full max-w-md bg-gray-300 shadow-none border-none gap-0 pt-0 pb-4">
+    <Card className="relative w-full max-w-md bg-gray-300 shadow-none border-none gap-0 pt-0 pb-4 mx-3">
       <Quote className="absolute top-3 right-2 h-16 w-16 text-foreground/10 stroke-[1.5px]" />
       <CardHeader className="py-1">
         <div className=" items-center gap-3">

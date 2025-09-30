@@ -21,7 +21,7 @@ export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => (
       <NavigationMenuItem key={nav.label}>
           <Button variant="ghost">
   
-            <Link href={nav.href}>{nav.label}</Link>
+            <Link href={nav.href} className="font-roboto" >{nav.label}</Link>
           </Button>
         </NavigationMenuItem>
       ))}

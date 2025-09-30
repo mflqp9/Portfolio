@@ -12,6 +12,7 @@ export default class ExperienceImg extends Component {
         width="800"//"1094"
         height="580"//"760"
         viewBox="0 0 1094 760"
+        className={`w-[600px] h-[350px] md:w-[800px] md:h-[580px]`}
       >
         <title>career process</title>
         <rect

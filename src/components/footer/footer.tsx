@@ -1,25 +1,12 @@
 import { Separator } from "@/components/ui/separator";
-// import {
-//   DribbbleIcon,
-//   GithubIcon,
-//   TwitchIcon,
-//   TwitterIcon,
-// } from "lucide-react";
+import {
+Heart
+} from "lucide-react";
 import Link from "next/link";
-import MuhammadFaisal from "../svg/faisaltechz";
 import { navFooter } from "@/assets/data/db";
 import SocialMedia from "@/components/container/socialMedia";
-import GreetTitle from "../svg/title";
-
+import type { Theme } from "@/types/prop_type";
 const footerLinks = navFooter;
-type Theme = {
-  text: string;
-  body: string;
-  highlight: string;
-  secondaryText?: string;
-  jacketColor: string;
-};
-
 interface FooterProps {
   theme?: Theme;
 }
@@ -37,15 +24,26 @@ export default function Footer({ theme }: FooterProps) {
         
         className="py-2 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
           {/* Copyright */}
-          <span
+          {/* <span
             style={{ color: theme?.secondaryText }}
             className="text-muted-foreground text-center sm:text-start"
           >Copyright 
             &copy; {new Date().getFullYear()}{" "}
             <Link href="/" target="_blank">
-              Faisal Techz
+              Made with
+<Heart/>
             </Link>
             . All rights reserved.
+          </span> */}
+          <span
+            style={{ color: theme?.secondaryText }}
+            className="flex text-muted-foreground text-center sm:text-start"
+          >
+              Made with
+<Heart  className="w-5 h-5 mx-2"/>
+            <Link href="/" target="_blank" className="flex">
+            by Muhammad Faisal
+            </Link>
           </span>
 
           <div className="flex items-center gap-5 text-muted-foreground">

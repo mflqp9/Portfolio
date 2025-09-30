@@ -51,22 +51,21 @@ export default function Eeperience() {
           {/* Headline */}
 
           <div className=" w-full grid flex-wrap items-center text-center justify-center">
-            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
+            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
               Experience
             </h1>
             <div className="flex justify-center">
               <h1
                 style={{ color: theme.jacketColor }}
-                className="ml-5 text-[18px] xl:text-2xl font-work-sans font-bold tracking-tight pl-2"
+                className="text-[18px] xl:text-2xl font-work-sans font-bold tracking-tight"
               >
                 {experience.title}
               </h1>
             </div>
-
             <p
               style={{ color: choosenTheme.secondaryText }}
-              className="ml-10 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left px-2"
-            >
+              className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center"
+              >
               {experience.body}
             </p>
           </div>

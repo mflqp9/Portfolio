@@ -10,14 +10,14 @@ export default function Contact() {
   const theme = choosenTheme;
   return (
     <div
-      style={{ backgroundColor: theme.body }}
-      className="min-h-[calc(100vh-15rem)] grid items-center  justify-center scroll-smooth overflow-hidden"
+      // style={{ backgroundColor: theme.body }} min-h-[calc(100vh-20rem)]
+      className="h-auto grid items-center  justify-center scroll-smooth overflow-hidden"
     >
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
 
         {/* Right Text Content */}
         <motion.div
-          className="my-5 w-full grid justify-center"
+          className="my-5 h-auto max-h-10 w-full grid justify-center"
           initial={{ opacity: 0, x: -200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
@@ -25,7 +25,7 @@ export default function Contact() {
           {/* Headline */}
 
           <div className="w-full grid flex-wrap items-center text-center justify-center">
-            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
+            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-sans font-bold tracking-tight">
               Contact Me
             </h1>
 
@@ -43,7 +43,7 @@ export default function Contact() {
         </motion.div>
         {/* Left Content (Image / Illustration) */}
         <motion.div
-          className="w-full max-w-xs h-[20rem] mt-[8rem]  mx-auto aspect-video  flex justify-center items-center
+          className="w-full max-w-[250px] h-[18rem] mt-[6rem]  mx-auto aspect-video  flex justify-center items-center
                      border-4 border-gray-400 rounded-tr-[50px] rounded-tl-[200px] rounded-br-[500px] rounded-bl-[450]"
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
@@ -52,8 +52,8 @@ export default function Contact() {
           <Image 
           src={faisal} 
           alt="Faisal"
-          width={400}
-          height={200}
+          width={270}
+          height={150}
           className="mt-[-6rem] mr-0.5 rounded-br-full rounded-bl-full"
           />
         </motion.div>

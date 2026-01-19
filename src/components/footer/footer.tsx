@@ -1,8 +1,4 @@
 import { Separator } from "@/components/ui/separator";
-import {
-Heart
-} from "lucide-react";
-import Link from "next/link";
 import { navFooter } from "@/assets/data/db";
 import SocialMedia from "@/components/container/socialMedia";
 import type { Theme } from "@/types/prop_type";
@@ -17,12 +13,12 @@ export default function Footer({ theme }: FooterProps) {
       className="dark:border-t dark bg-background text-foreground "
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="py-5 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6">
+        <div className="py-2 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6">
         </div>
         <Separator />
         <div 
         
-        className="py-2 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
+        className="py-0.5 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
           {/* Copyright */}
           {/* <span
             style={{ color: theme?.secondaryText }}

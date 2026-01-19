@@ -30,20 +30,20 @@ export default function HeroSection({ theme }: HeroSectionProps) {
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
           <div className="flex justify-center md:justify-start items-center">
-          <GreetTitle width={200}  />
+          KodeVision
           </div>
           {/* Headline */}
           <div className=" w-full grid flex-wrap justify-center md:justify-start items-center text-center sm:text-left">
             <h1
               style={{ color: theme.jacketColor }}
-              className=" text-[18px] sm:text-2xl md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight"
+              className=" text-[18px] sm:text-2xl md:text-[26px] lg:text-[32px] xl:text-4xl font-sans font-bold tracking-tight"
               >
               Building Modern & Responsive
             </h1>
             <div className=" flex justify-center">
               <RotatingText
                 texts={[ "Web", "Desktop"]}
-                mainClassName="font-semibold font-work-sans text-lg sm:mt-1 md:mt-2 px-2 sm:px-3 block bg-cyan-300 w-[100px] h-[28px] md:h-[30px] lg:h-[35px] justify-center  text-black overflow-hidden py-0.5 sm:py-1 rounded-lg"
+                mainClassName="font-semibold font-sans text-lg sm:mt-1 md:mt-2 px-2 sm:px-3 block bg-cyan-300 w-[100px] h-[28px] md:h-[30px] lg:h-[35px] justify-center  text-black overflow-hidden py-0.5 sm:py-1 rounded-lg"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -56,7 +56,7 @@ export default function HeroSection({ theme }: HeroSectionProps) {
               
               <h1
                 style={{ color: theme.jacketColor }}
-                className=" text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2"
+                className=" text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-sans font-bold tracking-tight pl-2"
               >
                 Application
               </h1>
@@ -68,7 +68,7 @@ export default function HeroSection({ theme }: HeroSectionProps) {
 
           <p
             style={{ color: choosenTheme.secondaryText }}
-            className="mt-3 max-w-[60ch] text-sm sm:text-base md:text-lg font-semibold font-roboto text-center px-2"
+            className="mt-3 max-w-[60ch] text-sm sm:text-base md:text-lg font-normal font-roboto text-center px-2"
             >
             {greeting.subTitle}
           </p>

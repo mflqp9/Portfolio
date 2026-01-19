@@ -39,11 +39,10 @@ export default function Footer({ theme }: FooterProps) {
             style={{ color: theme?.secondaryText }}
             className="flex text-muted-foreground text-center sm:text-start"
           >
-              Made with
-<Heart  className="w-5 h-5 mx-2"/>
-            <Link href="/" target="_blank" className="flex">
-            by Muhammad Faisal
-            </Link>
+        {`© ${new Date().getFullYear()} Designed & Developed by Muhammad Faisal`}
+{/* <Heart  className="w-5 h-5 mx-2"/> */}
+            {/* <Link href="/" target="_blank" className="flex"> */}
+            {/* </Link> */}
           </span>
 
           <div className="flex items-center gap-5 text-muted-foreground">

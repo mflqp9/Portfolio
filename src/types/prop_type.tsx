@@ -18,9 +18,12 @@ type Theme = {
   institute: string;
   duration: string;
   summary: string;
+  url?:string;
 };
 type CProjProps={
   title:string;
   summary:string;
+  url?:string
+  id?:string;
 }
 export type {Theme,InstituteProps,CProjProps};

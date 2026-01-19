@@ -1,11 +1,9 @@
 "use client";
-import React from "react";
 import { experience } from "@/assets/data/db";
 import { choosenTheme } from "@/components/util/theme";
 import { motion } from "motion/react";
 import ExperienceImg from "./../../../components/svg/ExperienceImg";
 import { CardExperience } from "@/components/container/cardExperience";
-import { Separator } from "@radix-ui/react-separator";
 
 const mywork = [
   {
@@ -21,7 +19,16 @@ const mywork = [
     duration: "Apr 10, 2025 – Jul 15, 2025",
     summary:
       "Completed a 3-month internship with a focus on full-stack web development, primarily working on frontend technologies and backend development using Node.js, Express.js, and MongoDB. Gained hands-on experience in building and integrating RESTful APIs and Payload CMS, managing database operations, and collaborating on real-world projects under professional supervision",
-  }
+  },
+{
+  title: "MERN Stack Developer",
+  institute: "Freelance Project",
+  duration: "Aug, 2025 – Dec, 2025",
+  summary:
+    "Designed and developed a complete tailor management web application using the MERN stack. The project includes customer management, measurement slips, order tracking, authentication, and role-based access control. Built a responsive and user-friendly frontend with React.js and implemented secure RESTful APIs using Node.js and Express.js. Managed database design and operations with MongoDB, ensuring data consistency and performance. Integrated real-world business logic tailored specifically for tailoring workflows, and deployed the application for live usage. This project enhanced my skills in full-stack development, API integration, state management, and production-ready application design.",
+  url: "https://tailor.kodevision.com/"
+}
+
 ];
 
 export default function Eeperience() {

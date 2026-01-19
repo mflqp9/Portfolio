@@ -101,9 +101,17 @@ const projects={
   summary:"I build modern, high-performance web applications with Next.js 15, Tailwind CSS v4, and the latest technologies, working on key components such as the footer, product display page, and other features to deliver sleek, responsive, and engaging user experiences.",
 card:[
   {
+    id:"01",
     title: "My Portfolio",
     summary:
-    "Developed a modern Single Page Application (SPA) portfolio using Next.js 15 and Tailwind CSS v4, leveraging the latest libraries and best practices to deliver a fast, responsive, and visually engaging user experience."
+    "Developed a modern Single Page Application (SPA) portfolio using Next.js 15 and Tailwind CSS v4, leveraging the latest libraries and best practices to deliver a fast, responsive, and visually engaging user experience.",    
+
+  },
+    {
+      id:"02",
+    title: "Tailor Management App",
+   summary:"Designed and developed a complete tailor management web application using the MERN stack. The project includes customer management, measurement slips, order tracking, authentication, and role-based access control. Built a responsive and user-friendly frontend with React.js and implemented secure RESTful APIs using Node.js and Express.js. Managed database design and operations with MongoDB, ensuring data consistency and performance. Integrated real-world business logic tailored specifically for tailoring workflows, and deployed the application for live usage. This project enhanced my skills in full-stack development, API integration, state management, and production-ready application design.",
+  url: "https://tailor.kodevision.com/"
   },
 ]
 
@@ -153,7 +161,7 @@ const SocialMediaLinks: IconProps[] = [
   // },
   {
     name: "G Mail",
-    link: "mailto:FaisalTechz.official@gmail.com",
+    link: "mailto:mflqp9@gmail.com",
     icon: faGoogle,
     backgroundColor: "#D14836",
     hoverColor:"#FF2825",

@@ -7,11 +7,11 @@ import { CardProject } from "@/components/container/cardProject";
 import ProjectsImg from "./../../../components/svg/ProjectsImg";
 import Image from "next/image";
 
-import footerdesktop from "@/assets/image/footerdesktop.png"
-import footermobile from "@/assets/image/footermobile.png"
-import productdesktop from "@/assets/image/productdesktop.png"
-import productmobile from "@/assets/image/productmobile.png"
-import newsinsight from "@/assets/image/newsinsight.png"
+import footerdesktop from "@/assets/image/footerdesktop.png";
+import footermobile from "@/assets/image/footermobile.png";
+import productdesktop from "@/assets/image/productdesktop.png";
+import productmobile from "@/assets/image/productmobile.png";
+import newsinsight from "@/assets/image/newsinsight.png";
 export default function Projects() {
   const theme = choosenTheme;
   return (
@@ -31,7 +31,7 @@ export default function Projects() {
         </motion.div>
         {/* Right Text Content */}
         <motion.div
-          className="my-5 w-full"
+          className="my-5 w-full gap-y-5"
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
@@ -52,7 +52,7 @@ export default function Projects() {
             </div>
 
             <p
-              style={{ color:theme.secondaryText }}
+              style={{ color: theme.secondaryText }}
               className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left p-2"
             >
               {projects.summary}
@@ -65,10 +65,10 @@ export default function Projects() {
       </div>
 
       {/* Projects Images */}
-      <div 
-       className="w-full grid justify-center gap-2.5 p-2 bg-gray-700 rounded-2xl border-2"
-       style={{backgroundColor:theme.text,color:theme.body}}
-       >
+      <div
+        className="w-full grid justify-center gap-2.5 p-2 bg-gray-700 rounded-2xl border-2"
+        style={{ backgroundColor: theme.text, color: theme.body }}
+      >
         <div className="w-[100%] flex justify-center items-center rounded-tl-2xl rounded-tr-2xl">
           <h1 className="text-[18px] sm:text-[22px]  md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
             My Projects
@@ -76,44 +76,25 @@ export default function Projects() {
         </div>
         <div className="w-[100%] border-gray-400">
           <div className="aspect-auto mb-5">
-          <Image
-            src={footerdesktop}
-            alt="Footer"
-            width={1280}
-            height={500}
-          
+            <Image src={footerdesktop} alt="Footer" width={1280} height={500} />
+          </div>
+          <div className="aspect-auto flex justify-center">
+            <Image src={footermobile} alt="Footer" width={300} />
+          </div>
+          <div className="aspect-auto flex justify-center mt-5">
+            <Image src={productdesktop} alt="Footer" width={1280} />
+          </div>
+          <div className="aspect-auto flex justify-center mt-5">
+            <Image src={productmobile} alt="Mobile_Layout" width={768} />
+          </div>
+          <div className="aspect-auto mt-5">
+            <Image
+              src={newsinsight}
+              alt="NewsInsight"
+              width={1280}
+              height={500}
             />
-            </div>
-            <div className="aspect-auto flex justify-center">
-          <Image
-            src={footermobile}
-            alt="Footer"
-            width={300}
-            />
-            </div>
-            <div className="aspect-auto flex justify-center mt-5">
-          <Image
-            src={productdesktop}
-            alt="Footer"
-            width={1280}
-            />
-            </div>
-            <div className="aspect-auto flex justify-center mt-5">
-          <Image
-            src={productmobile}
-            alt="Mobile_Layout"
-            width={768}
-            />
-            </div>
-            <div className="aspect-auto mt-5">
-          <Image
-            src={newsinsight}
-            alt="NewsInsight"
-            width={1280}
-            height={500}
-          
-            />
-            </div>
+          </div>
         </div>
       </div>
     </div>

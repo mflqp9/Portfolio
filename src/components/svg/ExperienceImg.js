@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { choosenTheme } from "@/components/util/theme";
 
 export default class ExperienceImg extends Component {
@@ -9,8 +9,8 @@ export default class ExperienceImg extends Component {
         id="bf56719a-dd30-4b09-833f-7c41eeee086b"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
-        width="800"//"1094"
-        height="580"//"760"
+        width="800" //"1094"
+        height="580" //"760"
         viewBox="0 0 1094 760"
         className={`w-[600px] h-[350px] md:w-[800px] md:h-[580px]`}
       >

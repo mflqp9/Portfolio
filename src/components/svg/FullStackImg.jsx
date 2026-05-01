@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class FullStackImg extends Component {
   render() {
@@ -12,6 +12,7 @@ export default class FullStackImg extends Component {
         height="632.37039"
         viewBox="0 0 1098.75 632.37039"
       >
+        <title>Full stack development illustration</title>
         <ellipse
           cx="549.375"
           cy="600.77366"

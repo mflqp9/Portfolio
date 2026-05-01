@@ -1,27 +1,22 @@
+import Link from "next/link";
+import type { ComponentProps } from "react";
+import { navItems } from "@/assets/data/db";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
-import Link from "next/link";
-import { navItems } from "@/assets/data/db";
-import { cn } from "@/lib/utils";
-import React, { ComponentProps } from "react";
 import { Button } from "../ui/button";
-import { LucideIcon } from "lucide-react";
 
 export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => (
   <NavigationMenu {...props}>
     <NavigationMenuList className="gap-1 space-x-0 text-sm">
       {navItems.map((nav) => (
-      <NavigationMenuItem key={nav.label}>
+        <NavigationMenuItem key={nav.label}>
           <Button variant="ghost">
-  
-            <Link href={nav.href} className="font-roboto" >{nav.label}</Link>
+            <Link href={nav.href} className="font-roboto">
+              {nav.label}
+            </Link>
           </Button>
         </NavigationMenuItem>
       ))}

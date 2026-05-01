@@ -1,9 +1,9 @@
 "use client";
-import { experience } from "@/assets/data/db";
-import { choosenTheme } from "@/components/util/theme";
 import { motion } from "motion/react";
-import ExperienceImg from "./../../../components/svg/ExperienceImg";
+import { experience } from "@/assets/data/db";
 import { CardExperience } from "@/components/container/cardExperience";
+import { choosenTheme } from "@/components/util/theme";
+import ExperienceImg from "./../../../components/svg/ExperienceImg";
 
 const mywork = [
   {
@@ -20,22 +20,21 @@ const mywork = [
     summary:
       "Completed a 3-month internship with a focus on full-stack web development, primarily working on frontend technologies and backend development using Node.js, Express.js, and MongoDB. Gained hands-on experience in building and integrating RESTful APIs and Payload CMS, managing database operations, and collaborating on real-world projects under professional supervision",
   },
-{
-  title: "MERN Stack Developer",
-  institute: "Freelance Project",
-  duration: "Aug, 2025 – Dec, 2025",
-  summary:
-    "Designed and developed a complete tailor management web application using the MERN stack. The project includes customer management, measurement slips, order tracking, authentication, and role-based access control. Built a responsive and user-friendly frontend with React.js and implemented secure RESTful APIs using Node.js and Express.js. Managed database design and operations with MongoDB, ensuring data consistency and performance. Integrated real-world business logic tailored specifically for tailoring workflows, and deployed the application for live usage. This project enhanced my skills in full-stack development, API integration, state management, and production-ready application design.",
-  url: "https://tailor.kodevision.com/"
-}
-
+  {
+    title: "MERN Stack Developer",
+    institute: "Freelance Project",
+    duration: "Aug, 2025 – Dec, 2025",
+    summary:
+      "Designed and developed a complete tailor management web application using the MERN stack. The project includes customer management, measurement slips, order tracking, authentication, and role-based access control. Built a responsive and user-friendly frontend with React.js and implemented secure RESTful APIs using Node.js and Express.js. Managed database design and operations with MongoDB, ensuring data consistency and performance. Integrated real-world business logic tailored specifically for tailoring workflows, and deployed the application for live usage. This project enhanced my skills in full-stack development, API integration, state management, and production-ready application design.",
+    url: "https://tailor.kodevision.com/",
+  },
 ];
 
 export default function Eeperience() {
   const theme = choosenTheme;
   return (
     <div
-      style={{ backgroundColor:theme.body }}
+      style={{ backgroundColor: theme.body }}
       className="min-h-[calc(100vh-5rem)] grid items-center  justify-center overflow-hidden scroll-smooth"
     >
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
@@ -72,7 +71,7 @@ export default function Eeperience() {
             <p
               style={{ color: choosenTheme.secondaryText }}
               className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center"
-              >
+            >
               {experience.body}
             </p>
           </div>
@@ -87,7 +86,10 @@ export default function Eeperience() {
       </div>
       <div className="w-full h-auto p-5 flex flex-col justify-center items-center gap-5">
         {mywork.map((work, index) => (
-          <CardExperience key={index} props={{ ...work, index }} />
+          <CardExperience
+            key={`${work.title}-${work.duration}`}
+            props={{ ...work, index }}
+          />
         ))}
       </div>
     </div>

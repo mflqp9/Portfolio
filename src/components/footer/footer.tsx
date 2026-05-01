@@ -1,8 +1,7 @@
-import { Separator } from "@/components/ui/separator";
-import { navFooter } from "@/assets/data/db";
 import SocialMedia from "@/components/container/socialMedia";
+import { Separator } from "@/components/ui/separator";
 import type { Theme } from "@/types/prop_type";
-const footerLinks = navFooter;
+
 interface FooterProps {
   theme?: Theme;
 }
@@ -13,12 +12,9 @@ export default function Footer({ theme }: FooterProps) {
       className="dark:border-t dark bg-background text-foreground "
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="py-2 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6">
-        </div>
+        <div className="py-2 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6"></div>
         <Separator />
-        <div 
-        
-        className="py-0.5 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
+        <div className="py-0.5 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
           {/* Copyright */}
           {/* <span
             style={{ color: theme?.secondaryText }}
@@ -35,8 +31,8 @@ export default function Footer({ theme }: FooterProps) {
             style={{ color: theme?.secondaryText }}
             className="flex text-muted-foreground text-center sm:text-start"
           >
-        {`© ${new Date().getFullYear()} Designed & Developed by Muhammad Faisal`}
-{/* <Heart  className="w-5 h-5 mx-2"/> */}
+            {`© ${new Date().getFullYear()} Designed & Developed by Muhammad Faisal`}
+            {/* <Heart  className="w-5 h-5 mx-2"/> */}
             {/* <Link href="/" target="_blank" className="flex"> */}
             {/* </Link> */}
           </span>

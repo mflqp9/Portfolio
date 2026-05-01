@@ -1,9 +1,14 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class CssIcon extends Component {
   render() {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 128 128">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 128 128"
+      >
         <title>CSS</title>
         <path
           fill="#1572B6"

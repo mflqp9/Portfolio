@@ -1,22 +1,21 @@
-'use client'
-import React, { Component } from "react";
+"use client";
+import { Component } from "react";
 import { choosenTheme } from "../util/theme";
-import { greeting } from "@/assets/data/db";
 
 class ManOnTable extends Component {
   render() {
-    
     const theme = choosenTheme;
     return (
       <svg
         id="b52d7e2d-d80f-4111-b6ed-d15502ee1eddf"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
-        width="580.1879" 
+        width="580.1879"
         height="400.68268"
         viewBox="0 0 768.1879 669.68268"
         className=""
       >
+        <title>Developer illustration</title>
         {/* <title>{greeting.nickname}</title> */}
         <polygon
           points="516.326 380.018 516.326 565.013 547.27 615.443 549.625 619.279 671.722 619.279 674.189 380.018 516.326 380.018"

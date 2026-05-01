@@ -1,17 +1,15 @@
 "use client";
-import React from "react";
-import { projects } from "@/assets/data/db";
-import { choosenTheme } from "@/components/util/theme";
 import { motion } from "motion/react";
-import { CardProject } from "@/components/container/cardProject";
-import ProjectsImg from "./../../../components/svg/ProjectsImg";
 import Image from "next/image";
-
+import { projects } from "@/assets/data/db";
 import footerdesktop from "@/assets/image/footerdesktop.png";
 import footermobile from "@/assets/image/footermobile.png";
+import newsinsight from "@/assets/image/newsinsight.png";
 import productdesktop from "@/assets/image/productdesktop.png";
 import productmobile from "@/assets/image/productmobile.png";
-import newsinsight from "@/assets/image/newsinsight.png";
+import { CardProject } from "@/components/container/cardProject";
+import { choosenTheme } from "@/components/util/theme";
+import ProjectsImg from "./../../../components/svg/ProjectsImg";
 export default function Projects() {
   const theme = choosenTheme;
   return (
@@ -58,8 +56,8 @@ export default function Projects() {
               {projects.summary}
             </p>
           </div>
-          {projects.card.map((item, i) => (
-            <CardProject key={i} props={item} />
+          {projects.card.map((item) => (
+            <CardProject key={item.id ?? item.title} props={item} />
           ))}
         </motion.div>
       </div>

@@ -1,4 +1,3 @@
-
 type Theme = {
   body: string;
   text: string;
@@ -12,18 +11,18 @@ type Theme = {
   headerColor: string;
   splashBg: string;
 };
- type InstituteProps =  {
-  index:number;
+type InstituteProps = {
+  index: number;
   title: string;
   institute: string;
   duration: string;
   summary: string;
-  url?:string;
+  url?: string;
 };
-type CProjProps={
-  title:string;
-  summary:string;
-  url?:string
-  id?:string;
-}
-export type {Theme,InstituteProps,CProjProps};
+type CProjProps = {
+  title: string;
+  summary: string;
+  url?: string;
+  id?: string;
+};
+export type { Theme, InstituteProps, CProjProps };

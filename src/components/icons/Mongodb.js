@@ -1,10 +1,14 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class MongodbIcon extends Component {
   render() {
-    
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        width="30"
+        height="30"
+      >
         <title>Mongodb</title>
         <path
           fillRule="evenodd"

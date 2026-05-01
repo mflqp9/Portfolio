@@ -1,14 +1,13 @@
-import React from "react";
-import { choosenTheme } from "../util/theme";
-import { easeInOut, motion } from "motion/react";
 import {
-  SquareArrowOutDownRight,
-  MapPinCheckInside,
   Github,
   Linkedin,
+  Mail,
+  MapPinCheckInside,
   Smartphone,
-  Mail
+  SquareArrowOutDownRight,
 } from "lucide-react";
+import { easeInOut, motion } from "motion/react";
+import { choosenTheme } from "../util/theme";
 export function CardContact() {
   return (
     <motion.div
@@ -34,28 +33,27 @@ export function CardContact() {
           <ul className="space-y-1">
             <li className="flex justify-start">
               <MapPinCheckInside />
-              <p className="text-xs pl-2">
-                {" "}
-                 J2 Block Johar Town Lahore.
-              </p>
+              <p className="text-xs pl-2"> J2 Block Johar Town Lahore.</p>
             </li>
             <li className="flex text-xs">
               <Smartphone />
-              <p className="pl-2 mt-1">
-              +92 300 86 84 287
-              </p>
-              <Mail className="ml-5"/>
-              <p className="text-xs pl-2 mt-1">
-                mflqp9@gmail.com
-              </p>
+              <p className="pl-2 mt-1">+92 300 86 84 287</p>
+              <Mail className="ml-5" />
+              <p className="text-xs pl-2 mt-1">mflqp9@gmail.com</p>
             </li>
             <li className="flex text-xs">
               <Github />
-              <a href="https://github.com/mflqp9/" className="text-xs pl-2 mt-1">
+              <a
+                href="https://github.com/mflqp9/"
+                className="text-xs pl-2 mt-1"
+              >
                 Github
               </a>
-                 <Linkedin className="ml-5"/>
-              <a href="https://linkedin.com/in/mflqp9/" className="text-xs pl-2 mt-1">
+              <Linkedin className="ml-5" />
+              <a
+                href="https://linkedin.com/in/mflqp9/"
+                className="text-xs pl-2 mt-1"
+              >
                 LinkedIn
               </a>
             </li>

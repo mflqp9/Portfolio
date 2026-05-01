@@ -1,20 +1,17 @@
 "use client";
-import React from "react";
-import { choosenTheme } from "@/components/util/theme";
 import { motion } from "motion/react";
-import { CardContact } from "@/components/container/cardContact";
-import faisal from "@/assets/image/faisal.png"
 import Image from "next/image";
+import faisal from "@/assets/image/faisal.png";
+import { CardContact } from "@/components/container/cardContact";
+import { choosenTheme } from "@/components/util/theme";
 
 export default function Contact() {
-  const theme = choosenTheme;
   return (
     <div
       // style={{ backgroundColor: theme.body }} min-h-[calc(100vh-20rem)]
       className="h-auto grid items-center  justify-center scroll-smooth overflow-hidden"
     >
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
-
         {/* Right Text Content */}
         <motion.div
           className="my-5 h-auto max-h-10 w-full grid justify-center"
@@ -33,12 +30,15 @@ export default function Contact() {
               style={{ color: choosenTheme.secondaryText }}
               className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center p-2"
             >
-              I’m available on almost every social platform — just drop me a message, and I’ll get back to you within 24 hours! I love helping with React, Next.js, MERN Stack, MySQL, and Open-Source Development.
+              I’m available on almost every social platform — just drop me a
+              message, and I’ll get back to you within 24 hours! I love helping
+              with React, Next.js, MERN Stack, MySQL, and Open-Source
+              Development.
             </p>
           </div>
-          
-            <CardContact />
-    
+
+          <CardContact />
+
           {/* <SocialMedia className="mt-5"/> */}
         </motion.div>
         {/* Left Content (Image / Illustration) */}
@@ -49,12 +49,12 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         >
-          <Image 
-          src={faisal} 
-          alt="Faisal"
-          width={270}
-          height={150}
-          className="mt-[-6rem] mr-0.5 rounded-br-full rounded-bl-full"
+          <Image
+            src={faisal}
+            alt="Faisal"
+            width={270}
+            height={150}
+            className="mt-[-6rem] mr-0.5 rounded-br-full rounded-bl-full"
           />
         </motion.div>
       </div>

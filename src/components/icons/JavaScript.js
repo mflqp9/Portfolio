@@ -1,9 +1,14 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class JavaScriptsIcon extends Component {
   render() {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 128 128">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 128 128"
+      >
         <title>JavaScript</title>
         <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z" />
         <path

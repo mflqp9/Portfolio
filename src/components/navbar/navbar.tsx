@@ -1,18 +1,18 @@
+import type { Theme } from "@/types/prop_type";
+import MuhammadFaisal from "../svg/faisaltechz";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
-import MuhammadFaisal from "../svg/faisaltechz";
-import { choosenTheme } from "../util/theme";
-import { Button } from "../ui/button";
-import { ArrowUpRight } from "lucide-react";
-import { Theme } from "@/types/prop_type";
 
-interface NavbarProps{
-  theme:Theme
+interface NavbarProps {
+  theme: Theme;
 }
-export default function Navbar({theme}:NavbarProps) {
+export default function Navbar({ theme }: NavbarProps) {
   return (
     <div className="min-h-16 bg-muted">
-      <nav style={{ backgroundColor:theme.body }} className="h-16 bg-background border-b">
+      <nav
+        style={{ backgroundColor: theme.body }}
+        className="h-16 bg-background border-b"
+      >
         <div className="h-full flex items-center justify-between max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-8">
             <div className=" w-64 h-10 flex justify-center">

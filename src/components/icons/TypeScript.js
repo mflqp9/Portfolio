@@ -1,10 +1,15 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class TypeScriptIcon extends Component {
   render() {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 128 128">
-<title>TypeScript</title>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 128 128"
+      >
+        <title>TypeScript</title>
         <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
         <path
           data-name="original"

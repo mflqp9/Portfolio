@@ -1,15 +1,14 @@
 "use client";
 
-import React from "react";
-import SkillSection from "./SkillSection";
 import { motion } from "motion/react";
+import SkillSection from "./SkillSection";
 
 type Theme = {
   text: string;
   body: string;
   highlight: string;
   secondaryText: string;
-  headerColor:string;
+  headerColor: string;
 };
 
 interface SkillsProps {
@@ -19,13 +18,12 @@ interface SkillsProps {
 export default function Skills({ theme }: SkillsProps) {
   return (
     <div
-    id="skills" 
-    style={{ 
-      
-      backgroundColor: theme.body
-    
-    }}
-    className="w-full flex flex-col items-center px-6 xl:px-12">
+      id="skills"
+      style={{
+        backgroundColor: theme.body,
+      }}
+      className="w-full flex flex-col items-center px-6 xl:px-12"
+    >
       <div className="w-full flex justify-center mb-8">
         <motion.h1
           initial={{ opacity: 0, x: -200 }}

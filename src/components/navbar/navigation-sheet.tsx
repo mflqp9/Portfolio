@@ -1,12 +1,10 @@
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { navItems } from "@/assets/data/db";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
 import MuhammadFaisal from "../svg/faisaltechz";
-import { NavMenu } from "./nav-menu";
-import { navItems } from "@/assets/data/db";
 import { choosenTheme } from "../util/theme";
-import Link from "next/link";
-import { DialogTitle } from "@radix-ui/react-dialog";
 
 export const NavigationSheet = () => {
   const theme = choosenTheme;
@@ -22,7 +20,7 @@ export const NavigationSheet = () => {
         style={{ backgroundColor: theme.body }}
       >
         <MuhammadFaisal className="mt-5" width={200} height={50} />
-        
+
         <div className="mt-2 text-base space-y-4">
           <div>
             <div className="font-bold">Portfolio</div>

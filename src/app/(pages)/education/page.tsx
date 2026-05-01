@@ -1,12 +1,9 @@
-
-'use client'
-import React from "react";
-import { education } from "@/assets/data/db";
-import { choosenTheme } from "@/components/util/theme";
+"use client";
 import { motion } from "motion/react";
-import EducationImg from "../../../components/svg/EducationImg";
+import { education } from "@/assets/data/db";
 import TestimonialCard from "@/components/container/testimonial";
-
+import { choosenTheme } from "@/components/util/theme";
+import EducationImg from "../../../components/svg/EducationImg";
 
 export default function Education() {
   const theme = choosenTheme;
@@ -39,19 +36,21 @@ export default function Education() {
               Education
             </h1>
             <div className="flex justify-center">
-              <h1 style={{color:theme.jacketColor}} className="ml-5 text-[18px] xl:text-2xl font-work-sans tracking-tight pl-2">
+              <h1
+                style={{ color: theme.jacketColor }}
+                className="ml-5 text-[18px] xl:text-2xl font-work-sans tracking-tight pl-2"
+              >
                 {education.degree} - {education.passing_year}
               </h1>
             </div>
 
-
-          <p
-            style={{ color: choosenTheme.secondaryText }}
-            className="ml-10 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left px-2"
+            <p
+              style={{ color: choosenTheme.secondaryText }}
+              className="ml-10 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left px-2"
             >
-            {education.uni} - {education.address}
-          </p>
-            </div>
+              {education.uni} - {education.address}
+            </p>
+          </div>
         </motion.div>
       </div>
       <div className="w-full grid justify-center gap-2.5">
@@ -61,8 +60,8 @@ export default function Education() {
           </h1>
         </div>
         <div className="w-full flex justify-center flex-2 flex-wrap gap-5">
-          {education.certications.map((cert,i) => (
-            <TestimonialCard key={i} props={cert}/>
+          {education.certications.map((cert) => (
+            <TestimonialCard key={cert.certificate_name} props={cert} />
           ))}
         </div>
       </div>

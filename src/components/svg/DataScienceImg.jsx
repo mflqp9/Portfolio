@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class DataScienceImg extends Component {
   render() {
@@ -12,6 +12,7 @@ export default class DataScienceImg extends Component {
         height="829.80067"
         viewBox="0 0 1120 829.80067"
       >
+        <title>Data science illustration</title>
         <ellipse
           cx="975.57906"
           cy="811.05902"

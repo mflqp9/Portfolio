@@ -1,7 +1,7 @@
-import type { InstituteProps } from "@/types/prop_type";
-import { choosenTheme } from "../util/theme";
 import { easeInOut, motion } from "motion/react";
 import Link from "next/link";
+import type { InstituteProps } from "@/types/prop_type";
+import { choosenTheme } from "../util/theme";
 
 interface CardProps {
   props: InstituteProps;
@@ -38,9 +38,18 @@ export function CardExperience({ props }: CardProps) {
           {props.duration}
         </h1>
         <p className="text-xs p-2 text-c">{props.summary}</p>
-       {
-        props.url && (
-          <span className="text-sm">click to open : <Link target="_blank" rel="noopener noreferrer" href={props.url} className="text-blue-500 hover:underline" >Visit Tailor Project</Link></span>
+        {props.url && (
+          <span className="text-sm">
+            click to open :{" "}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={props.url}
+              className="text-blue-500 hover:underline"
+            >
+              Visit Tailor Project
+            </Link>
+          </span>
         )}
       </div>
     </motion.div>

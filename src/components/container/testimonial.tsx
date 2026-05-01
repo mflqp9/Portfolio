@@ -1,8 +1,6 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-import React from "react";
 import Image from "next/image";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 type Props = {
   institute_name: string;
@@ -14,16 +12,20 @@ interface CardProps {
   props?: Props;
 }
 
-const TestimonialCard = ({ props }:CardProps) => {
+const TestimonialCard = ({ props }: CardProps) => {
   return (
     <Card className="relative w-full max-w-md bg-gray-300 shadow-none border-none gap-0 pt-0 pb-4 mx-3">
       <Quote className="absolute top-3 right-2 h-16 w-16 text-foreground/10 stroke-[1.5px]" />
       <CardHeader className="py-1">
         <div className=" items-center gap-3">
           <div className="w-[80%] mb-5">
-            <img src="
-https://www.nexusberry.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freverse-logo.04ea8f53.png&w=640&q=75" alt="nxb"/>
-            {/* <Image src="./nxb.png" alt="nxb" width={500} height={500}/> */}
+            <Image
+              src="/nxb.png"
+              alt="nxb"
+              width={500}
+              height={160}
+              className="h-auto w-full"
+            />
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-[15px] font-roboto italic leading-none font-semibold">

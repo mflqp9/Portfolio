@@ -1,19 +1,15 @@
-"use client"
-import HeroSection from '@/components/hero/HeroSection';
-import React from 'react';
-import { choosenTheme } from '@/components/util/theme' ;
-import Skills from '@/components/skills/Skills';
-
+"use client";
+import HeroSection from "@/components/hero/HeroSection";
+import Skills from "@/components/skills/Skills";
+import { choosenTheme } from "@/components/util/theme";
 
 const HomePage = () => {
-
-  
   return (
     <div>
-      <HeroSection theme={choosenTheme}/>
-      <Skills theme={choosenTheme}/>
+      <HeroSection theme={choosenTheme} />
+      <Skills theme={choosenTheme} />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

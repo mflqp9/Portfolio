@@ -1,16 +1,16 @@
 // theme.js
 export const blueTheme = {
-  body: "#EDF9FE",
-  text: "#001C55",
-  expTxtColor: "#000a12",
-  highlight: "#A6E1FA",
-  dark: "#00072D",
-  secondaryText: "#7F8DAA",
-  imageHighlight: "#0E6BA8",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#0000ff",
-  headerColor: "#0E6BA877",
-  splashBg: "#001C55",
+  body: "#06131d",
+  text: "#f8fafc",
+  expTxtColor: "#e2e8f0",
+  highlight: "#0b2233",
+  dark: "#020617",
+  secondaryText: "#9fb3c8",
+  imageHighlight: "#20d3ff",
+  compImgHighlight: "#102435",
+  jacketColor: "#20d3ff",
+  headerColor: "#f59e0b",
+  splashBg: "#04111c",
 };
 
 export const brownTheme = {

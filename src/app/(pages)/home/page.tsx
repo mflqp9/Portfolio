@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "@/components/hero/HeroSection";
 import Skills from "@/components/skills/Skills";
 import { choosenTheme } from "@/components/util/theme";
@@ -6,7 +5,7 @@ import { choosenTheme } from "@/components/util/theme";
 const HomePage = () => {
   return (
     <div>
-      <HeroSection theme={choosenTheme} />
+      <HeroSection />
       <Skills theme={choosenTheme} />
     </div>
   );

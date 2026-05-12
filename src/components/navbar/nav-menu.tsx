@@ -13,8 +13,12 @@ export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => (
     <NavigationMenuList className="gap-1 space-x-0 text-sm">
       {navItems.map((nav) => (
         <NavigationMenuItem key={nav.label}>
-          <Button variant="ghost">
-            <Link href={nav.href} className="font-roboto">
+          <Button
+            asChild
+            variant="ghost"
+            className="h-9 rounded-md px-3 text-slate-200 hover:bg-white/10 hover:text-cyan-200"
+          >
+            <Link href={nav.href} className="font-roboto text-sm">
               {nav.label}
             </Link>
           </Button>

@@ -7,53 +7,63 @@ import {
   SquareArrowOutDownRight,
 } from "lucide-react";
 import { easeInOut, motion } from "motion/react";
-import { choosenTheme } from "../util/theme";
 export function CardContact() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, scale: 1 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.1, ease: easeInOut }}
-      whileHover={{ scale: 0.98 }}
+      whileHover={{ y: -4 }}
       whileTap={{ scale: 0.96 }}
-      style={{ backgroundColor: choosenTheme.highlight }}
-      className="max-w-[24rem] min-h-[12rem] rounded-2xl grid gap-1 border border-gray-100 shadow-[0_0_15px_3px_rgba(0,0,0,0.20)]"
+      className="glass-panel mt-8 max-w-2xl rounded-md p-5 text-white"
     >
-      {/* Header */}
-      <div className=" max-h-[20px]  w-[100%] bg-gray-100 rounded-tl-2xl rounded-tr-2xl flex justify-start pl-2 items-center">
-        <h1 className=" text-xs md:text-[18px] font-normal font-work-sans text-gray-100">
-          01
-        </h1>
+      <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 className="font-work-sans text-xl font-black">Let's build</h2>
+        <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">
+          Lahore, PK
+        </span>
       </div>
 
-      {/* Content */}
-      <div className="h-full w-[100%] rounded-tr-2xl rounded-br-2xl pl-2">
-        <SquareArrowOutDownRight className=" w-5 h-5 mb-1" />
+      <div className="h-full w-full">
+        <SquareArrowOutDownRight aria-hidden="true" className="w-5 h-5 mb-1" />
         <div className="flex">
           <ul className="space-y-1">
-            <li className="flex justify-start">
-              <MapPinCheckInside />
-              <p className="text-xs pl-2"> J2 Block Johar Town Lahore.</p>
+            <li className="flex justify-start gap-2">
+              <MapPinCheckInside aria-hidden="true" />
+              <p className="text-sm text-slate-200">
+                J2 Block Johar Town Lahore.
+              </p>
             </li>
-            <li className="flex text-xs">
-              <Smartphone />
-              <p className="pl-2 mt-1">+92 300 86 84 287</p>
-              <Mail className="ml-5" />
-              <p className="text-xs pl-2 mt-1">mflqp9@gmail.com</p>
+            <li className="flex flex-wrap text-sm gap-x-4 gap-y-2 pt-2">
+              <a className="flex items-center gap-2" href="tel:+923008684287">
+                <Smartphone aria-hidden="true" />
+                +92 300 86 84 287
+              </a>
+              <a
+                className="flex items-center gap-2"
+                href="mailto:mflqp9@gmail.com"
+              >
+                <Mail aria-hidden="true" />
+                mflqp9@gmail.com
+              </a>
             </li>
-            <li className="flex text-xs">
-              <Github />
+            <li className="flex text-sm gap-x-4 pt-2">
               <a
                 href="https://github.com/mflqp9/"
-                className="text-xs pl-2 mt-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-cyan-200 hover:text-white"
               >
-                Github
+                <Github aria-hidden="true" />
+                GitHub
               </a>
-              <Linkedin className="ml-5" />
               <a
                 href="https://linkedin.com/in/mflqp9/"
-                className="text-xs pl-2 mt-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-cyan-200 hover:text-white"
               >
+                <Linkedin aria-hidden="true" />
                 LinkedIn
               </a>
             </li>

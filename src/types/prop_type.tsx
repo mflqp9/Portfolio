@@ -17,12 +17,21 @@ type InstituteProps = {
   institute: string;
   duration: string;
   summary: string;
+  highlights?: string[];
+  technologies?: string[];
+  projectLinks?: {
+    label: string;
+    url: string;
+  }[];
   url?: string;
 };
 type CProjProps = {
+  id: string;
   title: string;
   summary: string;
+  role?: string;
+  technologies?: string[];
+  highlights?: string[];
   url?: string;
-  id?: string;
 };
 export type { Theme, InstituteProps, CProjProps };

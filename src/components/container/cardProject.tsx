@@ -2,52 +2,79 @@ import { SquareArrowOutDownRight } from "lucide-react";
 import { easeInOut, motion } from "motion/react";
 import Link from "next/link";
 import type { CProjProps } from "@/types/prop_type";
-import { choosenTheme } from "../util/theme";
 
 interface CardProjectProps {
-  props: CProjProps;
+  project: CProjProps;
 }
-export function CardProject({ props }: CardProjectProps) {
+export function CardProject({ project }: CardProjectProps) {
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 50, scale: 1 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.1, ease: easeInOut }}
-      whileHover={{ scale: 0.98 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.35, ease: easeInOut }}
+      whileHover={{ y: -5 }}
       whileTap={{ scale: 0.96 }}
-      style={{ backgroundColor: choosenTheme.highlight }}
-      className="max-w-[24rem] min-h-[12rem] rounded-2xl grid gap-1 border border-gray-100 shadow-[0_0_15px_3px_rgba(0,0,0,0.20)] mt-4 mb-4"
+      className="surface-panel group grid min-h-[23rem] gap-1 overflow-hidden rounded-md"
     >
-      {/* Header */}
-      <div className=" max-h-[20px]  w-[100%] bg-gray-100 rounded-tl-2xl rounded-tr-2xl flex justify-start pl-2 items-center">
-        <h1 className=" text-xs md:text-[18px] font-normal font-work-sans text-gray-300">
-          {props.id}
-        </h1>
+      <div className="flex h-14 w-full items-center justify-between bg-slate-950 px-5">
+        <span className="font-work-sans text-lg font-black text-cyan-200">
+          {project.id}
+        </span>
+        <SquareArrowOutDownRight
+          aria-hidden="true"
+          className="h-5 w-5 text-amber-300 transition group-hover:translate-x-1 group-hover:-translate-y-1"
+        />
       </div>
 
-      {/* Content */}
-      <div className="h-full w-[100%] rounded-tr-2xl rounded-br-2xl pl-2">
-        <SquareArrowOutDownRight className="mb-2" />
-        <h1 className="text-[14px] md:text-[16px] lg:text-xl  font-work-sans font-medium">
-          {props.title}
-        </h1>
+      <div className="h-full w-full p-5">
+        <h3 className="font-work-sans text-2xl font-black tracking-tight text-slate-950">
+          {project.title}
+        </h3>
+        {project.role && (
+          <p className="mt-2 text-[12px] font-work-sans font-bold uppercase tracking-[0.18em] text-cyan-700">
+            {project.role}
+          </p>
+        )}
+        {project.technologies && project.technologies.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {project.technologies.map((technology) => (
+              <span
+                key={technology}
+                className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-[10px] font-bold text-slate-700"
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+        )}
 
-        {/* <Link href="/" className="text-blue-500 text-[10px] border border-gray-400 rounded p-1" >More Info...</Link> */}
-        <p className="text-xs p-2">{props.summary}</p>
-        {props.url && (
-          <span className="text-sm">
-            click to open :{" "}
+        <p className="mt-4 text-sm leading-7 text-slate-600">
+          {project.summary}
+        </p>
+        {project.highlights && project.highlights.length > 0 && (
+          <ul className="mt-4 space-y-2 text-sm text-slate-700">
+            {project.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                {highlight}
+              </li>
+            ))}
+          </ul>
+        )}
+        {project.url && (
+          <p className="mt-5 text-sm">
             <Link
               target="_blank"
               rel="noopener noreferrer"
-              href={props.url}
-              className="text-blue-500 hover:underline"
+              href={project.url}
+              className="font-bold text-cyan-700 hover:text-slate-950 hover:underline"
             >
-              Visit Tailor Project
+              View project
             </Link>
-          </span>
+          </p>
         )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

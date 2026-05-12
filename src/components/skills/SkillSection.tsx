@@ -1,20 +1,18 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-//import SoftwareSkill from "@/components/softwareSkills/SoftwareSkill";
-import { skills } from "@/assets/data/db"; // JSON data
-import CssIcon from "./../icons/Css"; //SVG Icon
-import ExpressIcon from "./../icons/Express"; //SVG Icon
-import HtmlIcon from "./../icons/Html"; //SVG Icon
-import JavaScriptsIcon from "./../icons/JavaScript"; //SVG Icon
-import MongodbIcon from "../icons/Mongodb"; //SVG Icon
-import NextIcon from "./../icons/Next"; //SVG Icon
-import NodeIcon from "./../icons/Node"; //SVG Icon
-import NpmIcon from "./../icons/Npm"; //SVG Icon
-import ReactIcon from "./../icons/React"; //SVG Icon
-import TypeScriptIcon from "./../icons/TypeScript"; //SVG Icon
-import TailwindIcon from "../icons/tailwinds"; //SVG Icon
+import { motion, useReducedMotion } from "motion/react";
+import { skills } from "@/assets/data/db";
+import CssIcon from "./../icons/Css";
+import ExpressIcon from "./../icons/Express";
+import HtmlIcon from "./../icons/Html";
+import JavaScriptsIcon from "./../icons/JavaScript";
+import MongodbIcon from "../icons/Mongodb";
+import NextIcon from "./../icons/Next";
+import NodeIcon from "./../icons/Node";
+import NpmIcon from "./../icons/Npm";
+import ReactIcon from "./../icons/React";
+import TypeScriptIcon from "./../icons/TypeScript";
+import TailwindIcon from "../icons/tailwinds";
 import CloudInfraImg from "../svg/CloudInfraImg";
 import DataScienceImg from "../svg/DataScienceImg";
 import DesignImg from "../svg/DesignImg";
@@ -44,60 +42,32 @@ function GetSkillSvg({ fileName, theme }: { fileName: string; theme: Theme }) {
 }
 
 export default function SkillSection({ theme }: SkillSectionProps) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Function to check screen size
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobile(false); // md and above
-      } else {
-        setIsMobile(true); // below md
-      }
-    };
-
-    // Run on mount
-    handleResize();
-
-    // Listen for screen resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const shouldReduceMotion = useReducedMotion();
+  const transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.5 };
 
   return (
     <div>
       {skills.data.map((skill) => (
         <div
           key={skill.title}
-          className={` flex flex-col md:flex-row overflow-hidden mb-8`}
+          className="mx-auto mb-8 grid max-w-screen-xl grid-cols-1 overflow-hidden rounded-md border border-slate-200/80 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:grid-cols-2"
         >
-          {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            // animate={{ opacity: 1, x: 0 }}
-            transition={isMobile ? { delay: 0.8 } : { duration: 0.5 }}
-            className="flex-1 order-2 md:order-1 [&>*]:max-w-full [&>*]:h-auto [&>*]:mt-0 md:[&>*]:mt-[100px]"
+            initial={false}
+            transition={transition}
+            className="order-2 flex items-center justify-center bg-slate-950 p-8 md:order-1 [&>*]:h-auto [&>*]:max-w-full"
           >
             <GetSkillSvg fileName={skill.fileName} theme={theme} />
           </motion.div>
 
-          {/* Text */}
-          <div className="flex-1 ml-0 md:ml-[50px] m-5 order-1 md:order-2">
-            <motion.h1
-              // initial={{ opacity: 0, x: 50 }}
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={isMobile ? { duration: 0.5 } : { delay: 0.6 }}
-              className="text-2xl lg:text-3xl font-semibold font-work-sans leading-normal text-center md:text-left"
-              style={{ color: theme.text }}
+          <div className="order-1 p-7 md:order-2 md:p-10">
+            <motion.h3
+              initial={false}
+              transition={transition}
+              className="text-center font-work-sans text-2xl font-black leading-tight text-slate-950 md:text-left lg:text-4xl"
             >
               {skill.title}
-            </motion.h1>
+            </motion.h3>
 
             {skill.type === "DesktopApp" && (
               <>
@@ -108,27 +78,15 @@ export default function SkillSection({ theme }: SkillSectionProps) {
               </>
             )}
 
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              <SoftwareSkill logos={skill.softwareSkills} />
-            </motion.div> */}
-
             <motion.div
-              initial={{ opacity: 0, y: 200 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={isMobile ? { delay: 0.6 } : { delay: 0.7 }}
-              className="mt-[-5]"
+              initial={false}
+              transition={transition}
+              className="mt-2"
             >
-              <p
-                style={{ color: theme.headerColor }}
-                className="font-roboto font-normal text-[12px]"
-              >
+              <p className="font-roboto text-[12px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
                 {skill.technologies}
               </p>
-              <div className="flex justify-start flex-wrap gap-x-2">
+              <div className="mt-4 flex flex-wrap justify-center gap-3 md:justify-start">
                 {skill.type === "WebApp" && (
                   <>
                     {/* "Icon for Web Development " */}
@@ -149,8 +107,7 @@ export default function SkillSection({ theme }: SkillSectionProps) {
               {skill.skills.map((skillSentence: string) => (
                 <p
                   key={skillSentence}
-                  className="text-[14px] md:text-[16px] leading-normal text-center md:text-left mt-2 mb-2"
-                  style={{ color: theme.secondaryText }}
+                  className="mt-4 border-l-2 border-cyan-300 pl-4 text-center text-[14px] leading-7 text-slate-600 md:text-left md:text-[16px]"
                 >
                   {skillSentence}
                 </p>

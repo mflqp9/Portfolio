@@ -1,97 +1,68 @@
 "use client";
 import { motion } from "motion/react";
-import { experience } from "@/assets/data/db";
+import { experience, workExperience } from "@/assets/data/db";
 import { CardExperience } from "@/components/container/cardExperience";
-import { choosenTheme } from "@/components/util/theme";
+import SectionHeader from "@/components/layout/SectionHeader";
 import ExperienceImg from "./../../../components/svg/ExperienceImg";
 
-const mywork = [
-  {
-    title: "Vb.Net Full Stack Developers ",
-    institute: "Faisal Techz/ As Freelancer",
-    duration: "2018 – 2024 (6 Year)",
-    summary:
-      "Proficient in VB.Net for developing scalable desktop applications, experienced in MS SQL Server for efficient database management, and skilled in designing complex reports with SAP Crystal Reports",
-  },
-  {
-    title: "MERN Stack Internship",
-    institute: "NexusBerry Training Institute & Solution",
-    duration: "Apr 10, 2025 – Jul 15, 2025",
-    summary:
-      "Completed a 3-month internship with a focus on full-stack web development, primarily working on frontend technologies and backend development using Node.js, Express.js, and MongoDB. Gained hands-on experience in building and integrating RESTful APIs and Payload CMS, managing database operations, and collaborating on real-world projects under professional supervision",
-  },
-  {
-    title: "MERN Stack Developer",
-    institute: "Freelance Project",
-    duration: "Aug, 2025 – Dec, 2025",
-    summary:
-      "Designed and developed a complete tailor management web application using the MERN stack. The project includes customer management, measurement slips, order tracking, authentication, and role-based access control. Built a responsive and user-friendly frontend with React.js and implemented secure RESTful APIs using Node.js and Express.js. Managed database design and operations with MongoDB, ensuring data consistency and performance. Integrated real-world business logic tailored specifically for tailoring workflows, and deployed the application for live usage. This project enhanced my skills in full-stack development, API integration, state management, and production-ready application design.",
-    url: "https://tailor.kodevision.com/",
-  },
-];
-
-export default function Eeperience() {
-  const theme = choosenTheme;
+export default function Experience() {
   return (
-    <div
-      style={{ backgroundColor: theme.body }}
-      className="min-h-[calc(100vh-5rem)] grid items-center  justify-center overflow-hidden scroll-smooth"
+    <section
+      aria-labelledby="experience-heading"
+      className="portfolio-dark-band min-h-[calc(100vh-5rem)] overflow-hidden scroll-smooth"
     >
-      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
-        {/* Left Content (Image / Illustration) */}
+      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <motion.div
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto aspect-video flex justify-center items-center"
+          className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto aspect-video flex justify-center items-center"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         >
-          <ExperienceImg />
+          <div className="glass-panel absolute inset-0 rotate-2 rounded-md" />
+          <div className="relative z-10">
+            <ExperienceImg />
+          </div>
         </motion.div>
-        {/* Right Text Content */}
+
         <motion.div
           className="my-auto w-full"
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
-          {/* Headline */}
-
-          <div className=" w-full grid flex-wrap items-center text-center justify-center">
-            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
+          <div className="w-full grid flex-wrap items-center text-center justify-center md:text-left md:justify-start">
+            <h1
+              id="experience-heading"
+              className="text-4xl font-black tracking-tight text-white md:text-6xl font-work-sans"
+            >
               Experience
             </h1>
             <div className="flex justify-center">
-              <h1
-                style={{ color: theme.jacketColor }}
-                className="text-[18px] xl:text-2xl font-work-sans font-bold tracking-tight"
-              >
+              <p className="mt-4 text-lg xl:text-2xl font-work-sans font-bold tracking-tight text-cyan-200">
                 {experience.title}
-              </h1>
+              </p>
             </div>
-            <p
-              style={{ color: choosenTheme.secondaryText }}
-              className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center"
-            >
+            <p className="mt-5 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center md:text-left leading-8 text-slate-300">
               {experience.body}
             </p>
           </div>
         </motion.div>
       </div>
-      <div className="w-full grid justify-center gap-2.5 m-5">
-        <div className="w-full flex justify-center items-center mb-5 mt-5">
-          <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
-            Work Experience
-          </h1>
+
+      <div className="portfolio-band px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeader
+          title="Career Timeline"
+          description="A practical path from enterprise desktop systems to modern SaaS, APIs, and high-performance web platforms."
+        />
+        <div className="mx-auto flex w-full max-w-5xl flex-col justify-center gap-5">
+          {workExperience.map((work, index) => (
+            <CardExperience
+              key={`${work.title}-${work.duration}`}
+              props={{ ...work, index }}
+            />
+          ))}
         </div>
       </div>
-      <div className="w-full h-auto p-5 flex flex-col justify-center items-center gap-5">
-        {mywork.map((work, index) => (
-          <CardExperience
-            key={`${work.title}-${work.duration}`}
-            props={{ ...work, index }}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }

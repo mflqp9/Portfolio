@@ -1,100 +1,89 @@
 "use client";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { projects } from "@/assets/data/db";
-import footerdesktop from "@/assets/image/footerdesktop.png";
-import footermobile from "@/assets/image/footermobile.png";
-import newsinsight from "@/assets/image/newsinsight.png";
-import productdesktop from "@/assets/image/productdesktop.png";
-import productmobile from "@/assets/image/productmobile.png";
+import { projectCards, projectGallery, projects } from "@/assets/data/db";
 import { CardProject } from "@/components/container/cardProject";
-import { choosenTheme } from "@/components/util/theme";
+import SectionHeader from "@/components/layout/SectionHeader";
 import ProjectsImg from "./../../../components/svg/ProjectsImg";
 export default function Projects() {
-  const theme = choosenTheme;
   return (
-    <div
-      style={{ backgroundColor: theme.body }}
-      className="min-h-[calc(100vh-5rem)] grid items-center  justify-center overflow-hidden scroll-smooth p-2"
+    <section
+      aria-labelledby="projects-heading"
+      className="portfolio-dark-band min-h-[calc(100vh-5rem)] overflow-hidden scroll-smooth"
     >
-      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
-        {/* Left Content (Image / Illustration) */}
+      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <motion.div
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto aspect-video flex justify-center items-center"
+          className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto aspect-video flex justify-center items-center"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         >
-          <ProjectsImg />
+          <div className="glass-panel absolute inset-0 -rotate-2 rounded-md" />
+          <div className="relative z-10">
+            <ProjectsImg />
+          </div>
         </motion.div>
-        {/* Right Text Content */}
         <motion.div
-          className="my-5 w-full gap-y-5"
+          className="my-auto w-full"
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
-          {/* Headline */}
-
-          <div className=" w-full grid flex-wrap items-center text-center justify-center">
-            <h1 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight pl-2">
+          <div className="w-full grid flex-wrap items-center text-center justify-center md:justify-start md:text-left">
+            <h1
+              id="projects-heading"
+              className="font-work-sans text-4xl font-black tracking-tight text-white md:text-6xl"
+            >
               Projects
             </h1>
-            <div className="flex justify-center">
-              <h1
-                style={{ color: theme.jacketColor }}
-                className="text-[18px] xl:text-2xl font-work-sans font-bold tracking-tight p-2"
-              >
+            <div className="flex justify-center md:justify-start">
+              <p className="mt-4 text-lg xl:text-2xl font-work-sans font-bold tracking-tight text-cyan-200">
                 {projects.title}
-              </h1>
+              </p>
             </div>
 
-            <p
-              style={{ color: theme.secondaryText }}
-              className="max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left p-2"
-            >
+            <p className="mt-5 max-w-[60ch] text-sm sm:text-base md:text-lg font-roboto text-center sm:text-left leading-8 text-slate-300">
               {projects.summary}
             </p>
           </div>
-          {projects.card.map((item) => (
-            <CardProject key={item.id ?? item.title} props={item} />
-          ))}
         </motion.div>
       </div>
 
-      {/* Projects Images */}
-      <div
-        className="w-full grid justify-center gap-2.5 p-2 bg-gray-700 rounded-2xl border-2"
-        style={{ backgroundColor: theme.text, color: theme.body }}
-      >
-        <div className="w-[100%] flex justify-center items-center rounded-tl-2xl rounded-tr-2xl">
-          <h1 className="text-[18px] sm:text-[22px]  md:text-[26px] lg:text-[32px] xl:text-4xl font-work-sans font-bold tracking-tight">
-            My Projects
-          </h1>
-        </div>
-        <div className="w-[100%] border-gray-400">
-          <div className="aspect-auto mb-5">
-            <Image src={footerdesktop} alt="Footer" width={1280} height={500} />
-          </div>
-          <div className="aspect-auto flex justify-center">
-            <Image src={footermobile} alt="Footer" width={300} />
-          </div>
-          <div className="aspect-auto flex justify-center mt-5">
-            <Image src={productdesktop} alt="Footer" width={1280} />
-          </div>
-          <div className="aspect-auto flex justify-center mt-5">
-            <Image src={productmobile} alt="Mobile_Layout" width={768} />
-          </div>
-          <div className="aspect-auto mt-5">
-            <Image
-              src={newsinsight}
-              alt="NewsInsight"
-              width={1280}
-              height={500}
-            />
-          </div>
+      <div className="portfolio-band px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeader
+          title="Selected Work"
+          description="Real projects from SaaS, business websites, law firm systems, and e-commerce frontend work. Add future projects in the data file and the page updates automatically."
+        />
+        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-5 lg:grid-cols-2">
+          {projectCards.map((item) => (
+            <CardProject key={item.id ?? item.title} project={item} />
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className="bg-slate-950 px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeader
+          title="Interface Gallery"
+          description="A quick look at implemented screens and layout work."
+          inverted
+        />
+        <div className="mx-auto max-w-screen-xl">
+          {projectGallery.map((item) => (
+            <div
+              key={item.alt}
+              className={`${item.wrapperClassName} overflow-hidden rounded-md border border-white/10 bg-white/5 p-2 shadow-2xl`}
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                sizes={item.sizes}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

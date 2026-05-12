@@ -1,57 +1,88 @@
 import { easeInOut, motion } from "motion/react";
 import Link from "next/link";
 import type { InstituteProps } from "@/types/prop_type";
-import { choosenTheme } from "../util/theme";
 
 interface CardProps {
   props: InstituteProps;
 }
 export function CardExperience({ props }: CardProps) {
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 50, scale: 1 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.1, ease: easeInOut }}
-      whileHover={{ scale: 0.98 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.35, ease: easeInOut }}
+      whileHover={{ y: -4 }}
       whileTap={{ scale: 0.96 }}
-      className="max-w-[100%] md:max-w-[60%] min-h-34 mx-3 rounded-2xl flex gap-1 border border-gray-100 shadow-[0_0_15px_3px_rgba(0,0,0,0.20)]"
+      className="surface-panel relative mx-0 grid min-h-34 overflow-hidden rounded-md md:grid-cols-[150px_1fr]"
     >
-      {/* Header */}
-      <div className=" min-h-34  w-[30%] bg-gray-200 rounded-tl-2xl rounded-bl-2xl flex justify-center-safe items-center">
-        <h1 className=" text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-extrabold underline font-work-sans">
+      <div className="flex min-h-28 items-center justify-center bg-slate-950 text-cyan-200">
+        <span className="font-work-sans text-5xl font-black tracking-tight md:text-6xl">
           0{props.index + 1}
-        </h1>
+        </span>
       </div>
 
-      {/* Content */}
-      <div className="h-full w-[100%] rounded-tr-2xl rounded-br-2xl">
-        <h1 className="text-[14px] md:text-xl lg:text-2xl pl-2  font-work-sans font-medium">
+      <div className="h-full w-full p-5 md:p-7">
+        <h3 className="font-work-sans text-xl font-black text-slate-950 lg:text-2xl">
           {props.title}
-        </h1>
-        <h1 className="text-xs md:text-[14px] lg:text-[16px] pl-2 mt-[-5] font-roboto font-light">
+        </h3>
+        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 md:text-[13px]">
           {props.institute}
-        </h1>
-        <h1
-          style={{ color: choosenTheme.jacketColor }}
-          className="text-[12px] md:text-[14px] lg:text-[14px] pl-2 mb-2 mt-[-5] italic underline font-work-sans font-medium"
-        >
+        </p>
+        <p className="mt-2 text-[12px] font-work-sans font-bold text-cyan-700 md:text-[14px]">
           {props.duration}
-        </h1>
-        <p className="text-xs p-2 text-c">{props.summary}</p>
+        </p>
+        {props.technologies && props.technologies.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {props.technologies.map((technology) => (
+              <span
+                key={technology}
+                className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-[10px] font-bold text-slate-700"
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+        )}
+        <p className="mt-4 text-sm leading-7 text-slate-600">{props.summary}</p>
+        {props.highlights && props.highlights.length > 0 && (
+          <ul className="mt-4 grid gap-2 text-sm text-slate-700 md:grid-cols-2">
+            {props.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                {highlight}
+              </li>
+            ))}
+          </ul>
+        )}
+        {props.projectLinks && props.projectLinks.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {props.projectLinks.map((project) => (
+              <Link
+                key={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.url}
+                className="font-bold text-cyan-700 hover:text-slate-950 hover:underline"
+              >
+                {project.label}
+              </Link>
+            ))}
+          </div>
+        )}
         {props.url && (
-          <span className="text-sm">
-            click to open :{" "}
+          <p className="mt-5 text-sm">
             <Link
               target="_blank"
               rel="noopener noreferrer"
               href={props.url}
-              className="text-blue-500 hover:underline"
+              className="font-bold text-cyan-700 hover:text-slate-950 hover:underline"
             >
-              Visit Tailor Project
+              View project
             </Link>
-          </span>
+          </p>
         )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

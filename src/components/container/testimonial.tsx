@@ -9,37 +9,37 @@ type Props = {
 };
 
 interface CardProps {
-  props?: Props;
+  props: Props;
 }
 
 const TestimonialCard = ({ props }: CardProps) => {
   return (
-    <Card className="relative w-full max-w-md bg-gray-300 shadow-none border-none gap-0 pt-0 pb-4 mx-3">
-      <Quote className="absolute top-3 right-2 h-16 w-16 text-foreground/10 stroke-[1.5px]" />
-      <CardHeader className="py-1">
+    <Card className="surface-panel relative w-full overflow-hidden rounded-md border-slate-200 bg-white shadow-none gap-0 pt-0 pb-5">
+      <Quote className="absolute top-5 right-4 h-14 w-14 text-cyan-900/10 stroke-[1.5px]" />
+      <CardHeader className="border-b border-slate-100 bg-slate-950/95 py-4">
         <div className=" items-center gap-3">
           <div className="w-[80%] mb-5">
             <Image
               src="/nxb.png"
-              alt="nxb"
+              alt="Nexus Berry Training & Solution"
               width={500}
               height={160}
               className="h-auto w-full"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-[15px] font-roboto italic leading-none font-semibold">
-              {props?.institute_name}
+            <span className="text-[15px] font-roboto leading-none font-semibold text-cyan-100">
+              {props.institute_name}
             </span>
-            <span className="text-sm font-roboto font-semibold italic leading-none">
-              {props?.certificate_name}
+            <span className="text-sm font-roboto font-semibold leading-none text-white">
+              {props.certificate_name}
             </span>
           </div>
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-[14px] font-work-sans font-normal text-gray-600">
-          {props?.certificate_detail}
+        <p className="text-[14px] font-work-sans font-normal leading-7 text-slate-600">
+          {props.certificate_detail}
         </p>
       </CardContent>
     </Card>

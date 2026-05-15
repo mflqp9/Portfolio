@@ -14,10 +14,10 @@ interface CardProps {
 
 const TestimonialCard = ({ props }: CardProps) => {
   return (
-    <Card className="surface-panel relative w-full overflow-hidden rounded-md border-slate-200 bg-white shadow-none gap-0 pt-0 pb-5">
+    <Card className="surface-panel relative w-full gap-0 overflow-hidden rounded-md border-slate-200 bg-white pt-0 pb-5 shadow-none">
       <Quote className="absolute top-5 right-4 h-14 w-14 text-cyan-900/10 stroke-[1.5px]" />
-      <CardHeader className="border-b border-slate-100 bg-slate-950/95 py-4">
-        <div className=" items-center gap-3">
+      <CardHeader className="border-b border-slate-100 bg-slate-950/95 py-5">
+        <div className="items-center gap-3">
           <div className="w-[80%] mb-5">
             <Image
               src="/nxb.png"
@@ -28,10 +28,10 @@ const TestimonialCard = ({ props }: CardProps) => {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-[15px] font-roboto leading-none font-semibold text-cyan-100">
+            <span className="font-roboto text-[15px] leading-none font-bold text-cyan-100">
               {props.institute_name}
             </span>
-            <span className="text-sm font-roboto font-semibold leading-none text-white">
+            <span className="font-roboto text-sm font-black leading-none text-white">
               {props.certificate_name}
             </span>
           </div>

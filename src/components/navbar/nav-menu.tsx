@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
 import { navItems } from "@/assets/data/db";
 import {
@@ -8,25 +11,38 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "../ui/button";
 
-export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => (
-  <NavigationMenu {...props}>
-    <NavigationMenuList className="gap-1 space-x-0 text-sm">
-      {navItems.map((nav) => (
-        <NavigationMenuItem key={nav.label}>
-          <Button
-            asChild
-            variant="ghost"
-            className="h-9 rounded-md px-3 text-slate-200 hover:bg-white/10 hover:text-cyan-200"
-          >
-            <Link href={nav.href} className="font-roboto text-sm">
-              {nav.label}
-            </Link>
-          </Button>
-        </NavigationMenuItem>
-      ))}
-    </NavigationMenuList>
-  </NavigationMenu>
-);
+export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => {
+  const pathname = usePathname();
+
+  return (
+    <NavigationMenu {...props}>
+      <NavigationMenuList className="gap-1 space-x-0 text-sm">
+        {navItems.map((nav) => {
+          const isActive =
+            nav.href === "/" ? pathname === "/" : pathname.startsWith(nav.href);
+
+          return (
+            <NavigationMenuItem key={nav.label}>
+              <Button
+                asChild
+                variant="ghost"
+                className={`h-10 rounded-md px-3 text-[13px] font-bold transition ${
+                  isActive
+                    ? "bg-cyan-300/12 text-cyan-100 shadow-[inset_0_-1px_0_rgba(34,211,238,0.85)]"
+                    : "text-slate-300 hover:bg-white/8 hover:text-white"
+                }`}
+              >
+                <Link href={nav.href} className="font-roboto">
+                  {nav.label}
+                </Link>
+              </Button>
+            </NavigationMenuItem>
+          );
+        })}
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+};
 
 // const ListItem = React.forwardRef<
 //   React.ElementRef<typeof Link>,

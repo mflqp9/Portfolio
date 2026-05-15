@@ -31,7 +31,7 @@ export default function SocialMedia({
           >
             <span
               aria-hidden="true"
-              className="inline-flex justify-center items-center rounded-full cursor-pointer text-[1.3rem] w-[2rem] h-[2rem] mx-[5px] relative text-center select-none mb-[10px] text-white bg-[var(--media-bg)] transition-colors duration-300 ease-in-out hover:bg-[var(--media-hover-bg)]"
+              className="relative mx-[5px] mb-[10px] inline-flex h-9 w-9 cursor-pointer select-none items-center justify-center rounded-md border border-white/10 bg-[var(--media-bg)] text-center text-[1.3rem] text-white shadow-lg shadow-slate-950/15 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[var(--media-hover-bg)]"
               style={style}
             >
               <FontAwesomeIcon icon={media.icon} className="h-4" />

@@ -15,7 +15,7 @@ export function CardContact() {
       transition={{ duration: 0.1, ease: easeInOut }}
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.96 }}
-      className="glass-panel mt-8 max-w-2xl rounded-md p-5 text-white"
+      className="premium-border glass-panel mt-8 max-w-2xl rounded-md p-5 text-white"
     >
       <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
         <h2 className="font-work-sans text-xl font-black">Let's build</h2>
@@ -25,29 +25,41 @@ export function CardContact() {
       </div>
 
       <div className="h-full w-full">
-        <SquareArrowOutDownRight aria-hidden="true" className="w-5 h-5 mb-1" />
+        <SquareArrowOutDownRight
+          aria-hidden="true"
+          className="mb-3 h-5 w-5 text-emerald-300"
+        />
         <div className="flex">
-          <ul className="space-y-1">
-            <li className="flex justify-start gap-2">
-              <MapPinCheckInside aria-hidden="true" />
+          <ul className="space-y-3">
+            <li className="flex justify-start gap-3">
+              <MapPinCheckInside
+                aria-hidden="true"
+                className="h-5 w-5 text-cyan-200"
+              />
               <p className="text-sm text-slate-200">
                 J2 Block Johar Town Lahore.
               </p>
             </li>
-            <li className="flex flex-wrap text-sm gap-x-4 gap-y-2 pt-2">
-              <a className="flex items-center gap-2" href="tel:+923008684287">
-                <Smartphone aria-hidden="true" />
+            <li className="flex flex-wrap gap-x-4 gap-y-2 pt-1 text-sm">
+              <a
+                className="flex items-center gap-2 text-slate-200 transition hover:text-white"
+                href="tel:+923008684287"
+              >
+                <Smartphone
+                  aria-hidden="true"
+                  className="h-5 w-5 text-cyan-200"
+                />
                 +92 300 86 84 287
               </a>
               <a
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-slate-200 transition hover:text-white"
                 href="mailto:mflqp9@gmail.com"
               >
-                <Mail aria-hidden="true" />
+                <Mail aria-hidden="true" className="h-5 w-5 text-cyan-200" />
                 mflqp9@gmail.com
               </a>
             </li>
-            <li className="flex text-sm gap-x-4 pt-2">
+            <li className="flex gap-x-4 pt-2 text-sm">
               <a
                 href="https://github.com/mflqp9/"
                 target="_blank"

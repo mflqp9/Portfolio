@@ -19,10 +19,10 @@ export default function Skills({ theme }: SkillsProps) {
   return (
     <div
       id="skills"
-      className="portfolio-band w-full flex flex-col items-center px-6 py-20 xl:px-12"
+      className="portfolio-band section-pad flex w-full flex-col items-center px-4 sm:px-6 lg:px-8"
     >
       <SectionHeader
-        title="What I Build"
+        title="Technologies I Work With"
         description="A focused mix of web platforms, APIs, databases, and desktop business systems, designed for real operations instead of demo-only screens."
       />
       <SkillSection theme={theme} />

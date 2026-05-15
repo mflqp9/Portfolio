@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Education",
+  title: "Certification - Muhammad Faisal",
   description:
     "Education, MERN stack training, and certifications for Muhammad Faisal.",
 };

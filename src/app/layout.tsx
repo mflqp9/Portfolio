@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${roboto.variable} ${worksans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${roboto.variable} ${worksans.variable} ${geistMono.variable} app-shell antialiased`}
       >
         <a
           href="#main-content"

@@ -37,7 +37,7 @@ export function CardExperience({ props }: CardProps) {
             {props.technologies.map((technology) => (
               <span
                 key={technology}
-                className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-[10px] font-bold text-slate-700"
+                className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[10px] font-black text-slate-700 shadow-sm"
               >
                 {technology}
               </span>
@@ -49,7 +49,7 @@ export function CardExperience({ props }: CardProps) {
           <ul className="mt-4 grid gap-2 text-sm text-slate-700 md:grid-cols-2">
             {props.highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
                 {highlight}
               </li>
             ))}
@@ -63,7 +63,7 @@ export function CardExperience({ props }: CardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={project.url}
-                className="font-bold text-cyan-700 hover:text-slate-950 hover:underline"
+                className="font-black text-cyan-700 hover:text-slate-950 hover:underline"
               >
                 {project.label}
               </Link>

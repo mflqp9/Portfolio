@@ -15,10 +15,10 @@ export default function SectionHeader({
 
   return (
     <div
-      className={`mx-auto mb-10 max-w-3xl ${isCenter ? "text-center" : "text-left"}`}
+      className={`mx-auto mb-12 max-w-3xl ${isCenter ? "text-center" : "text-left"}`}
     >
       <h2
-        className={`font-work-sans text-3xl font-black tracking-tight md:text-5xl ${
+        className={`text-balance font-work-sans text-3xl font-black leading-tight tracking-tight md:text-5xl ${
           inverted ? "text-white" : "text-slate-950"
         }`}
       >
@@ -26,7 +26,7 @@ export default function SectionHeader({
       </h2>
       {description && (
         <p
-          className={`mt-4 text-sm leading-7 md:text-base ${
+          className={`mx-auto mt-4 max-w-2xl text-sm leading-7 md:text-base ${
             inverted ? "text-slate-300" : "text-slate-600"
           }`}
         >

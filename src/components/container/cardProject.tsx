@@ -15,9 +15,9 @@ export function CardProject({ project }: CardProjectProps) {
       transition={{ duration: 0.35, ease: easeInOut }}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.96 }}
-      className="surface-panel group grid min-h-[23rem] gap-1 overflow-hidden rounded-md"
+      className="surface-panel group grid min-h-[23rem] gap-1 overflow-hidden rounded-md transition-shadow hover:shadow-[0_30px_70px_rgba(15,23,42,0.16)]"
     >
-      <div className="flex h-14 w-full items-center justify-between bg-slate-950 px-5">
+      <div className="flex h-16 w-full items-center justify-between bg-slate-950 px-5">
         <span className="font-work-sans text-lg font-black text-cyan-200">
           {project.id}
         </span>
@@ -27,7 +27,7 @@ export function CardProject({ project }: CardProjectProps) {
         />
       </div>
 
-      <div className="h-full w-full p-5">
+      <div className="h-full w-full p-5 md:p-6">
         <h3 className="font-work-sans text-2xl font-black tracking-tight text-slate-950">
           {project.title}
         </h3>
@@ -41,7 +41,7 @@ export function CardProject({ project }: CardProjectProps) {
             {project.technologies.map((technology) => (
               <span
                 key={technology}
-                className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-[10px] font-bold text-slate-700"
+                className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[10px] font-black text-slate-700 shadow-sm"
               >
                 {technology}
               </span>
@@ -56,7 +56,7 @@ export function CardProject({ project }: CardProjectProps) {
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             {project.highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
                 {highlight}
               </li>
             ))}
@@ -68,9 +68,10 @@ export function CardProject({ project }: CardProjectProps) {
               target="_blank"
               rel="noopener noreferrer"
               href={project.url}
-              className="font-bold text-cyan-700 hover:text-slate-950 hover:underline"
+              className="inline-flex items-center gap-2 font-black text-cyan-700 hover:text-slate-950 hover:underline"
             >
               View project
+              <SquareArrowOutDownRight className="h-3.5 w-3.5" />
             </Link>
           </p>
         )}

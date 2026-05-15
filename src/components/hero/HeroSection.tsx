@@ -4,49 +4,45 @@ import {
   ArrowUpRight,
   Code2,
   Database,
+  MonitorCog,
   ServerCog,
 } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { greeting } from "@/assets/data/db";
+import faisal from "@/assets/image/faisal.png";
 import SocialMedia from "@/components/container/socialMedia";
 import { Button } from "@/components/ui/button";
-import ManOnTable from "../svg/manOnTable";
 
 export default function HeroSection() {
+  const capabilities = [
+    { icon: Code2, title: "Frontend", detail: "React / Next.js" },
+    { icon: ServerCog, title: "Backend", detail: "Node APIs" },
+    { icon: Database, title: "Data", detail: "SQL / MongoDB" },
+    { icon: MonitorCog, title: "Desktop", detail: "VB.NET systems" },
+  ];
+
   return (
     <section
       aria-labelledby="hero-heading"
       className="portfolio-grid relative min-h-[calc(100vh-4rem)] overflow-hidden"
     >
-      <div className="w-full max-w-screen-xl mx-auto grid min-h-[calc(100vh-4rem)] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1fr_0.86fr] lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
+      <div className="container-xl grid min-h-[calc(100vh-4rem)] grid-cols-1 items-center gap-12 py-14 md:grid-cols-[1fr_0.92fr] lg:py-20">
         <motion.div
           className="my-auto w-full"
-          initial={{ opacity: 0, y: 36 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
         >
-          <p className="flex justify-center md:justify-start items-center text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
-            {greeting.title}
-          </p>
-          <div className="mt-5 w-full grid flex-wrap justify-center md:justify-start items-center text-center sm:text-left">
+          <div className="w-full grid flex-wrap items-center justify-center text-center sm:text-left md:justify-start">
             <h1
               id="hero-heading"
-              className="max-w-4xl text-balance font-work-sans text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl"
+              className="max-w-4xl text-balance font-work-sans text-5xl font-black leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl"
             >
-              Full-stack software for serious business workflows.
+              Muhammad Faisal
+              <span className="block accent-text">Full-Stack Developer</span>
             </h1>
-            <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
-              {["SaaS platforms", "MERN apps", "Desktop systems"].map(
-                (label) => (
-                  <span
-                    key={label}
-                    className="rounded-md border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-cyan-100"
-                  >
-                    {label}
-                  </span>
-                ),
-              )}
-            </div>
           </div>
 
           <div className="flex justify-center md:justify-start">
@@ -59,7 +55,7 @@ export default function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="h-12 rounded-md bg-cyan-300 px-5 text-sm font-bold text-slate-950 shadow-[0_18px_40px_rgba(32,211,255,0.24)] hover:bg-cyan-200"
+              className="h-12 rounded-md bg-cyan-300 px-5 text-sm font-black text-slate-950 shadow-[0_18px_44px_rgba(34,211,238,0.24)] hover:bg-cyan-200"
             >
               <a
                 href={greeting.resumeLink}
@@ -77,7 +73,7 @@ export default function HeroSection() {
               asChild
               size="lg"
               variant="outline"
-              className="h-12 rounded-md border-white/15 bg-white/5 px-5 text-sm font-bold text-white hover:bg-white/10 hover:text-cyan-100"
+              className="h-12 rounded-md border-white/15 bg-white/5 px-5 text-sm font-black text-white hover:bg-white/10 hover:text-cyan-100"
             >
               <a href="/projects">
                 View Projects
@@ -90,19 +86,18 @@ export default function HeroSection() {
             <SocialMedia className="pt-2" />
           </div>
 
-          <div className="mt-9 grid grid-cols-3 gap-3 text-left">
-            {[
-              { icon: Code2, label: "React / Next.js" },
-              { icon: ServerCog, label: "Node APIs" },
-              { icon: Database, label: "SQL / MongoDB" },
-            ].map((item) => (
+          <div className="mt-10 grid grid-cols-2 gap-3 text-left lg:grid-cols-4">
+            {capabilities.map((item) => (
               <div
-                key={item.label}
-                className="glass-panel rounded-md px-3 py-4 text-center"
+                key={item.title}
+                className="glass-panel rounded-md px-4 py-4"
               >
-                <item.icon className="mx-auto mb-2 h-5 w-5 text-cyan-200" />
-                <p className="text-[11px] font-semibold text-slate-200 md:text-xs">
-                  {item.label}
+                <item.icon className="mb-3 h-5 w-5 text-cyan-200" />
+                <p className="font-work-sans text-sm font-black text-white">
+                  {item.title}
+                </p>
+                <p className="mt-1 text-xs font-semibold text-slate-400">
+                  {item.detail}
                 </p>
               </div>
             ))}
@@ -110,20 +105,41 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center"
-          initial={{ opacity: 0, scale: 0.92, x: 40 }}
+          className="relative mx-auto flex aspect-square w-full max-w-[560px] items-center justify-center"
+          initial={false}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
         >
-          <div className="glass-panel absolute inset-6 rotate-3 rounded-md" />
-          <div className="absolute left-0 top-12 rounded-md border border-cyan-300/30 bg-slate-950/85 px-4 py-3 text-xs text-slate-200 shadow-2xl">
-            <span className="text-cyan-300">deploy</span> production SaaS
+          <div className="premium-border glass-panel absolute inset-8 rounded-md" />
+          <div className="absolute left-0 top-12 z-20 hidden rounded-md border border-cyan-300/25 bg-slate-950/90 px-4 py-3 font-mono text-xs text-slate-200 shadow-2xl sm:block">
+            <span className="text-cyan-300">import</span> businessLogic
           </div>
-          <div className="absolute bottom-12 right-0 rounded-md border border-amber-300/30 bg-slate-950/85 px-4 py-3 text-xs text-slate-200 shadow-2xl">
-            REST APIs + data workflows
+          <div className="absolute bottom-14 right-0 z-20 hidden rounded-md border border-emerald-300/25 bg-slate-950/90 px-4 py-3 font-mono text-xs text-slate-200 shadow-2xl sm:block">
+            build success in 1.2s
           </div>
-          <div className="relative z-10 [&_svg]:drop-shadow-[0_24px_55px_rgba(32,211,255,0.22)]">
-            <ManOnTable />
+          <div className="absolute right-4 top-24 z-10 hidden w-64 rounded-md border border-white/10 bg-slate-950/78 p-4 font-mono text-[11px] leading-6 text-slate-300 shadow-2xl backdrop-blur md:block">
+            <p>
+              <span className="text-pink-300">const</span>{" "}
+              <span className="text-cyan-200">developer</span>{" "}
+              <span className="text-slate-500">=</span> {"{"}
+            </p>
+            <p className="pl-4">
+              stack: <span className="text-emerald-300">"MERN + Next"</span>,
+            </p>
+            <p className="pl-4">
+              focus: <span className="text-amber-300">"business systems"</span>
+            </p>
+            <p>{"}"}</p>
+          </div>
+          <div className="relative z-10 flex h-[88%] w-[72%] items-end justify-center overflow-hidden rounded-md bg-gradient-to-b from-slate-800/30 to-slate-950/70">
+            <Image
+              src={faisal}
+              alt="Muhammad Faisal"
+              priority
+              width={430}
+              height={520}
+              className="h-auto w-[92%] object-contain drop-shadow-[0_28px_60px_rgba(34,211,238,0.2)]"
+            />
           </div>
         </motion.div>
       </div>

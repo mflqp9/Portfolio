@@ -46,11 +46,11 @@ export default function SkillSection({ theme }: SkillSectionProps) {
   const transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.5 };
 
   return (
-    <div>
+    <div className="mx-auto grid w-full max-w-screen-xl gap-6">
       {skills.data.map((skill) => (
         <div
           key={skill.title}
-          className="mx-auto mb-8 grid max-w-screen-xl grid-cols-1 overflow-hidden rounded-md border border-slate-200/80 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:grid-cols-2"
+          className="surface-panel premium-border grid overflow-hidden rounded-md md:grid-cols-[0.86fr_1.14fr]"
         >
           <motion.div
             initial={false}
@@ -83,10 +83,10 @@ export default function SkillSection({ theme }: SkillSectionProps) {
               transition={transition}
               className="mt-2"
             >
-              <p className="font-roboto text-[12px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
+              <p className="font-roboto text-[12px] font-bold uppercase tracking-[0.18em] text-cyan-700">
                 {skill.technologies}
               </p>
-              <div className="mt-4 flex flex-wrap justify-center gap-3 md:justify-start">
+              <div className="mt-5 flex flex-wrap justify-center gap-3 md:justify-start">
                 {skill.type === "WebApp" && (
                   <>
                     {/* "Icon for Web Development " */}
@@ -104,14 +104,17 @@ export default function SkillSection({ theme }: SkillSectionProps) {
                   </>
                 )}
               </div>
-              {skill.skills.map((skillSentence: string) => (
-                <p
-                  key={skillSentence}
-                  className="mt-4 border-l-2 border-cyan-300 pl-4 text-center text-[14px] leading-7 text-slate-600 md:text-left md:text-[16px]"
-                >
-                  {skillSentence}
-                </p>
-              ))}
+              <div className="mt-6 grid gap-3">
+                {skill.skills.map((skillSentence: string) => (
+                  <p
+                    key={skillSentence}
+                    className="rounded-md border border-slate-200/80 bg-white/70 px-4 py-3 text-center text-[14px] leading-7 text-slate-600 md:text-left md:text-[15px]"
+                  >
+                    <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
+                    {skillSentence}
+                  </p>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

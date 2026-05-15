@@ -12,12 +12,12 @@ export default function Footer({ theme }: FooterProps) {
       style={{ backgroundColor: theme?.dark }}
       className="border-t border-white/10 text-white"
     >
-      <div className="max-w-screen-xl mx-auto">
+      <div className="container-xl">
         <Separator className="bg-white/10" />
-        <div className="py-5 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-12">
+        <div className="flex flex-col-reverse items-center justify-between gap-x-2 gap-y-5 py-5 sm:flex-row">
           <p
             style={{ color: theme?.secondaryText }}
-            className="text-center sm:text-start text-sm"
+            className="text-center text-sm sm:text-start"
           >
             {`Copyright ${new Date().getFullYear()} Designed & Developed by Muhammad Faisal`}
           </p>
